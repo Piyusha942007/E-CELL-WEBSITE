@@ -6,8 +6,9 @@ import Initiatives from './components/Initiatives';
 import Team from './components/Team';
 import Footer from './components/Footer';
 import UdbhavPage from './pages/UdbhavPage';
-// import IdeathonPage from './pages/IdeathonPage'; // You can keep or comment this out if you want to use Coming Soon for everything
-import ComingSoonPage from './pages/ComingSoonPage'; // Import New Page
+import ComingSoonPage from './pages/ComingSoonPage';
+import SocialSidebar from './components/SocialSidebar'; 
+import Contact from './components/Contact';
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <Inauguration />
       <Initiatives />
       <Team />
+      <Contact />
       <Footer />
     </>
   );
@@ -24,12 +26,21 @@ const Home = () => {
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/udbhav" element={<UdbhavPage />} />
-      <Route path="/coming-soon" element={<ComingSoonPage />} />
-      {/* Route path="/ideathon" element={<IdeathonPage />} / */} 
-    </Routes>
+    <div className="relative">
+      {/* This component is placed OUTSIDE routes so it shows up on:
+         - Home Page
+         - Udbhav Page
+         - Coming Soon Page
+      */}
+      <SocialSidebar /> 
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/udbhav" element={<UdbhavPage />} />
+        <Route path="/coming-soon" element={<ComingSoonPage />} />
+        {/* Route path="/ideathon" element={<IdeathonPage />} / */} 
+      </Routes>
+    </div>
   );
 }
 
