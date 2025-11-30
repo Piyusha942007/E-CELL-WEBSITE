@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, MapPin, UserCheck, Users } from 'lucide-react';
+import { Calendar, MapPin, UserCheck, Users, Star } from 'lucide-react';
 import FadeIn from './FadeIn';
 
 const Inauguration = () => {
@@ -35,46 +35,47 @@ const Inauguration = () => {
               </p>
             </FadeIn>
 
-            {/* Key Event Stats Grid */}
+            {/* Key Personalities Grid (Updated from Report) */}
             <FadeIn delay={0.2}>
               <div className="grid sm:grid-cols-2 gap-4 mt-6">
                 
-                {/* Chief Guest Card */}
+                {/* Director Card */}
                 <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex items-start space-x-3">
                   <UserCheck className="text-accent h-6 w-6 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="text-xs text-gray-400 font-bold uppercase">Presided By</p>
+                    <p className="text-xs text-gray-400 font-bold uppercase">Director</p>
                     <p className="font-bold text-primary text-sm">Dr. H. U. Tiwari</p>
-                    <p className="text-xs text-secondary">Director, PCCOER</p>
+                    <p className="text-xs text-secondary">PCCOER</p>
                   </div>
                 </div>
                 
-                {/* Date Card */}
-                <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex items-start space-x-3">
-                  <Calendar className="text-accent h-6 w-6 mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="text-xs text-gray-400 font-bold uppercase">Date</p>
-                    <p className="font-bold text-primary text-sm">September 3, 2025</p>
-                  </div>
-                </div>
-
-                {/* Venue Card */}
-                <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex items-start space-x-3">
-                  <MapPin className="text-accent h-6 w-6 mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="text-xs text-gray-400 font-bold uppercase">Venue</p>
-                    <p className="font-bold text-primary text-sm">Room 502</p>
-                    <p className="text-xs text-secondary">Computer Dept</p>
-                  </div>
-                </div>
-
-                {/* Faculty Card */}
+                {/* HOD Card */}
                 <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex items-start space-x-3">
                   <Users className="text-accent h-6 w-6 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="text-xs text-gray-400 font-bold uppercase">Guest of Honor</p>
+                    <p className="text-xs text-gray-400 font-bold uppercase">Head of Dept</p>
                     <p className="font-bold text-primary text-sm">Dr. Vijay Kotkar</p>
-                    <p className="text-xs text-secondary">HOD, Computer Dept</p>
+                    <p className="text-xs text-secondary">Computer Engineering</p>
+                  </div>
+                </div>
+
+                {/* Faculty Advisor Card (Added Mrs. Vaishali) */}
+                <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex items-start space-x-3">
+                  <Star className="text-accent h-6 w-6 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-xs text-gray-400 font-bold uppercase">Faculty Advisor</p>
+                    <p className="font-bold text-primary text-sm">Dr. Vaishali C. Kulloli</p>
+                    <p className="text-xs text-secondary">E-Cell Coordinator</p>
+                  </div>
+                </div>
+
+                {/* Date & Venue Combined */}
+                <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex items-start space-x-3">
+                  <Calendar className="text-accent h-6 w-6 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-xs text-gray-400 font-bold uppercase">Details</p>
+                    <p className="font-bold text-primary text-sm">Sept 3, 2025</p>
+                    <p className="text-xs text-secondary">Room 502, Comp Dept</p>
                   </div>
                 </div>
 
@@ -92,41 +93,41 @@ const Inauguration = () => {
           <FadeIn direction="left" delay={0.4}>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                {/* Image 1: Ribbon Cutting */}
+                {/* Image 1 */}
                 <div className="rounded-xl shadow-lg w-full h-48 overflow-hidden bg-gray-200 relative group">
                    <img 
-                    src="/ribbon-cutting.png" 
+                    src="/inauguration/ribbon-cutting.png" 
                     alt="Ribbon Cutting Ceremony" 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                    />
                    <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs p-2 translate-y-full group-hover:translate-y-0 transition-transform">
-                      Ribbon Cutting
+                      Inauguration Ceremony
                    </div>
                 </div>
 
-                {/* Image 2: Students/Audience (Reusing ribbon-cutting.png as per your snippet, swap if you have a different pic) */}
+                {/* Image 2 */}
                 <div className="rounded-xl shadow-lg w-full h-64 overflow-hidden bg-gray-200 relative group">
                   <img 
-                    src="/startup-presentation.png" 
-                    alt="Students Presenting" 
+                    src="/inauguration/startup-presentation.png" 
+                    alt="Students Attending" 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs p-2 translate-y-full group-hover:translate-y-0 transition-transform">
-                      5 Student Startups presented
+                      50+ Students Participated
                    </div>
                 </div>
               </div>
 
               <div className="space-y-4 pt-8">
-                {/* Image 3: Team 2025 */}
-                 <div className="rounded-xl shadow-lg w-full h-64 overflow-hidden bg-gray-200 relative group">
+                {/* Image 3: Team Photo */}
+                 <div className="rounded-xl shadow-lg w-full h-64 overflow-hidden bg-black relative group">
                   <img 
-                    src="/team.JPG" 
+                    src="/inauguration/team.JPG" 
                     alt="Team 2025" 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                   />
                    <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs p-2 translate-y-full group-hover:translate-y-0 transition-transform">
-                      Team 2025
+                      Core Team & Faculty
                    </div>
                 </div>
 

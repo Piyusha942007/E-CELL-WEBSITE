@@ -6,9 +6,9 @@ import Initiatives from './components/Initiatives';
 import Team from './components/Team';
 import Footer from './components/Footer';
 import UdbhavPage from './pages/UdbhavPage';
-import IdeathonPage from './pages/IdeathonPage'; // Import the new page
+// import IdeathonPage from './pages/IdeathonPage'; // You can keep or comment this out if you want to use Coming Soon for everything
+import ComingSoonPage from './pages/ComingSoonPage'; // Import New Page
 
-// Home Component
 const Home = () => {
   return (
     <>
@@ -27,7 +27,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/udbhav" element={<UdbhavPage />} />
-      <Route path="/ideathon" element={<IdeathonPage />} /> {/* New Route */}
+      <Route path="/coming-soon" element={<ComingSoonPage />} />
+      {/* Route path="/ideathon" element={<IdeathonPage />} / */} 
     </Routes>
   );
 }
