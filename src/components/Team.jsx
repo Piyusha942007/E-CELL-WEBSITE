@@ -17,14 +17,14 @@ const Team = () => {
           <div className="flex justify-center mb-20">
             <div className="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-accent text-center max-w-md w-full relative mx-4">
                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-accent text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide shadow-lg">
-                 Faculty Advisor
+                 Just for example    ------    Faculty Advisor
                </div>
                <img 
                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1376&auto=format&fit=crop" 
                  alt="Mrs. Vaishali C. Kulloli" 
                  className="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-blue-50"
                />
-               <h3 className="text-2xl font-bold text-primary">Mrs. Vaishali C. Kulloli</h3>
+               <h3 className="text-2xl font-bold text-primary">Dr. Vaishali Kulloli</h3>
                <p className="text-secondary mt-2 text-sm leading-relaxed">
                  Guiding the strategic vision of PCCOER E-Cell with over 15 years of academic excellence.
                </p>
