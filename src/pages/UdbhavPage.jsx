@@ -81,8 +81,7 @@ const UdbhavPage = () => {
                 {[
                     { label: "Teams", value: "90+" },
                     { label: "Finalists", value: "30" },
-                    { label: "Participants", value: "165+" },
-                    { label: "Prize Pool", value: "₹10K" }
+                    { label: "Participants", value: "165+" }
                 ].map((stat, i) => (
                     <div key={i} className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl shadow-lg hover:-translate-y-1 transition-transform">
                         <p className="text-3xl font-bold text-white mb-1">{stat.value}</p>
