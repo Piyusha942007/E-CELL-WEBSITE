@@ -6,6 +6,9 @@ import Footer from '../components/Footer';
 import FadeIn from '../components/FadeIn';
 
 const UdbhavPage = () => {
+  // This automatically gets your repo name "/E-CELL-WEBSITE/"
+  const publicUrl = import.meta.env.BASE_URL;
+
   const winners = [
     {
       id: "01",
@@ -13,7 +16,8 @@ const UdbhavPage = () => {
       tagline: "SMART GYM MEMBERSHIPS",
       desc: "Solving fitness inconsistency. FitBudget allows students and professionals to choose flexible, budget-friendly fitness plans.",
       icon: <Trophy className="w-6 h-6 text-yellow-600" />,
-      image: "/winner-1.jpg" 
+      // Note: Ensure winner-1.jpg exists in your public folder!
+      image: `${publicUrl}winner-1.jpg` 
     },
     {
       id: "02",
@@ -21,7 +25,7 @@ const UdbhavPage = () => {
       tagline: "SUSTAINABLE GARDENING",
       desc: "Wellness meets sustainability. Easy-to-use, eco-friendly gardening kits designed for busy urban professionals.",
       icon: <Trophy className="w-6 h-6 text-gray-500" />,
-      image: "/winner-2.jpg"
+      image: `${publicUrl}winner-2.jpg`
     },
     {
       id: "03",
@@ -29,7 +33,7 @@ const UdbhavPage = () => {
       tagline: "ON-DEMAND REPAIRS",
       desc: "Connecting users with verified local experts. FixIt ensures reliable, transparent, and organized services.",
       icon: <Trophy className="w-6 h-6 text-orange-600" />,
-      image: "/winner-3.jpg"
+      image: `${publicUrl}winner-3.jpg`
     }
   ];
 
@@ -44,15 +48,13 @@ const UdbhavPage = () => {
         
         {/* A. Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-            {/* Using one of your gallery images as the texture */}
+            {/* FIX: Use publicUrl for the path */}
             <img 
-                src="/udbhav/6.jpg" 
+                src={`${publicUrl}udbhav/6.jpg`} 
                 alt="Event Background Texture" 
                 className="w-full h-full object-cover opacity-60"
             />
-            {/* The Professional Navy Overlay (Mix Blend Mode adds depth) */}
             <div className="absolute inset-0 bg-primary/95 mix-blend-multiply"></div>
-            {/* Gradient Fade to White at the bottom */}
             <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent"></div>
         </div>
 
@@ -76,7 +78,6 @@ const UdbhavPage = () => {
               "Where Ideas Turn Into <span className="font-semibold text-white">Reality</span>."
             </p>
 
-            {/* B. Floating Glass Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 {[
                     { label: "Teams", value: "90+" },
@@ -93,15 +94,13 @@ const UdbhavPage = () => {
         </div>
       </div>
 
-      {/* 2. ABOUT THE EVENT (Light Mode) */}
+      {/* 2. ABOUT THE EVENT */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
                 <div className="grid lg:grid-cols-2 gap-12 border border-gray-100 rounded-3xl p-8 md:p-12 shadow-xl bg-white relative overflow-hidden">
-                    {/* Decorative Blob */}
                     <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
 
-                    {/* Left Column */}
                     <div>
                         <div className="flex items-center gap-4 mb-6">
                             <div className="p-3 bg-blue-50 rounded-xl">
@@ -116,7 +115,6 @@ const UdbhavPage = () => {
                             The event focused on encouraging students to develop innovative entrepreneurial ideas and providing hands-on pitching experience.
                         </p>
 
-                        {/* Stats Pills */}
                         <div className="flex flex-wrap gap-4">
                             <div className="bg-surface px-5 py-3 rounded-xl border border-gray-200 flex items-center gap-3">
                                 <Users className="w-5 h-5 text-accent" />
@@ -142,7 +140,6 @@ const UdbhavPage = () => {
                         </div>
                     </div>
 
-                    {/* Right Column: Objectives */}
                     <div className="bg-surface rounded-2xl p-8 border border-gray-200 flex flex-col justify-center">
                         <div className="flex items-center gap-3 mb-8">
                             <Target className="w-6 h-6 text-red-500" />
@@ -181,7 +178,6 @@ const UdbhavPage = () => {
                     <FadeIn key={idx} delay={idx * 0.1}>
                         <div className="flex flex-col h-full bg-white rounded-2xl shadow-card hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 group">
                             
-                            {/* Card Content */}
                             <div className="p-8 relative">
                                 <div className="absolute top-4 right-6 text-6xl font-bold text-gray-100 select-none">
                                     {winner.id}
@@ -202,7 +198,6 @@ const UdbhavPage = () => {
                                 </p>
                             </div>
 
-                            {/* Winner Photo */}
                             <div className="h-56 overflow-hidden">
                                 <img 
                                     src={winner.image} 
@@ -229,8 +224,9 @@ const UdbhavPage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                      {galleryImages.map((num) => (
                         <div key={num} className="rounded-xl overflow-hidden shadow-lg h-64 group relative cursor-pointer border border-gray-100">
+                            {/* FIX: Use publicUrl in the loop */}
                             <img 
-                                src={`/udbhav/${num}.jpg`} 
+                                src={`${publicUrl}udbhav/${num}.jpg`} 
                                 alt={`Event Moment ${num}`} 
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
                             />

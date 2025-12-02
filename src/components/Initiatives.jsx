@@ -4,11 +4,14 @@ import { Link } from 'react-router-dom';
 import FadeIn from './FadeIn';
 
 const Initiatives = () => {
+  // Define publicUrl
+  const publicUrl = import.meta.env.BASE_URL;
+
   return (
     <section id="initiatives" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* SECTION 1: OUR LEGACY (UDBHAV) - BRAND ALIGNED */}
+        {/* SECTION 1: OUR LEGACY */}
         <FadeIn>
           <div className="mb-12 text-center">
             <span className="text-accent font-semibold tracking-wider uppercase text-sm">
@@ -22,23 +25,22 @@ const Initiatives = () => {
 
         <FadeIn delay={0.2}>
           <div className="flex justify-center mb-24">
-            {/* CARD FIXED: Uses bg-primary (Navy) instead of Black */}
             <div className="max-w-4xl w-full bg-primary rounded-3xl overflow-hidden shadow-2xl relative grid md:grid-cols-2">
                 
-                {/* Left: Poster Image (Object Contain for full visibility) */}
+                {/* Left: Poster Image */}
                 <div className="h-80 md:h-auto bg-gray-900 relative">
+                    {/* FIX: Use publicUrl */}
                     <img 
-                        src="/udbhav/udbhav-poster.jpg" 
+                        src={`${publicUrl}udbhav/udbhav-poster.jpg`} 
                         alt="Udbhav 2025 Poster" 
                         className="w-full h-full object-contain p-4"
                     />
-                    {/* Badge */}
                     <div className="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                         OCT 1, 2025
                     </div>
                 </div>
 
-                {/* Right: Content (Professional Layout) */}
+                {/* Right: Content */}
                 <div className="p-8 md:p-12 flex flex-col justify-center">
                     <h3 className="text-3xl font-heading font-bold text-white mb-4">
                         UDBHAV '25
@@ -61,7 +63,7 @@ const Initiatives = () => {
           </div>
         </FadeIn>
 
-        {/* SECTION 2: FUTURE FRONTIERS (Unchanged - Already Professional) */}
+        {/* SECTION 2: FUTURE FRONTIERS */}
         <FadeIn>
             <div className="mb-12 text-center md:text-left">
                 <span className="text-accent font-semibold tracking-wider uppercase text-sm">

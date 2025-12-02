@@ -3,6 +3,9 @@ import { Calendar, MapPin, UserCheck, Users, Star } from 'lucide-react';
 import FadeIn from './FadeIn';
 
 const Inauguration = () => {
+  // Define publicUrl
+  const publicUrl = import.meta.env.BASE_URL;
+
   return (
     <section id="about" className="py-20 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,7 +38,7 @@ const Inauguration = () => {
               </p>
             </FadeIn>
 
-            {/* Key Personalities Grid (Updated from Report) */}
+            {/* Key Personalities Grid */}
             <FadeIn delay={0.2}>
               <div className="grid sm:grid-cols-2 gap-4 mt-6">
                 
@@ -59,7 +62,7 @@ const Inauguration = () => {
                   </div>
                 </div>
 
-                {/* Faculty Advisor Card (Added Mrs. Vaishali) */}
+                {/* Faculty Advisor Card */}
                 <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex items-start space-x-3">
                   <Star className="text-accent h-6 w-6 mt-1 flex-shrink-0" />
                   <div>
@@ -95,8 +98,9 @@ const Inauguration = () => {
               <div className="space-y-4">
                 {/* Image 1 */}
                 <div className="rounded-xl shadow-lg w-full h-48 overflow-hidden bg-gray-200 relative group">
+                   {/* FIX: Use publicUrl */}
                    <img 
-                    src="/inauguration/ribbon-cutting.png" 
+                    src={`${publicUrl}inauguration/ribbon-cutting.png`} 
                     alt="Ribbon Cutting Ceremony" 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                    />
@@ -107,8 +111,9 @@ const Inauguration = () => {
 
                 {/* Image 2 */}
                 <div className="rounded-xl shadow-lg w-full h-64 overflow-hidden bg-gray-200 relative group">
+                  {/* FIX: Use publicUrl */}
                   <img 
-                    src="/inauguration/startup-presentation.png" 
+                    src={`${publicUrl}inauguration/startup-presentation.png`} 
                     alt="Students Attending" 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
@@ -121,8 +126,9 @@ const Inauguration = () => {
               <div className="space-y-4 pt-8">
                 {/* Image 3: Team Photo */}
                  <div className="rounded-xl shadow-lg w-full h-64 overflow-hidden bg-black relative group">
+                  {/* FIX: Use publicUrl */}
                   <img 
-                    src="/inauguration/team.JPG" 
+                    src={`${publicUrl}inauguration/team.JPG`} 
                     alt="Team 2025" 
                     className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                   />
