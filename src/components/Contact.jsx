@@ -83,13 +83,6 @@ const Contact = () => {
                 <div className="bg-green-50 p-3 rounded-lg mr-4 text-green-600">
                   <Phone className="w-6 h-6" />
                 </div>
-                <div>
-                  <h4 className="font-bold text-primary text-lg mb-1">Call Us</h4>
-                  <p className="text-secondary text-sm mb-2">Mon-Fri from 9am to 5pm.</p>
-                  <a href="tel:+912012345678" className="text-primary font-semibold hover:text-accent transition-colors">
-                    +91 20 1234 5678
-                  </a>
-                </div>
               </div>
             </FadeIn>
 
