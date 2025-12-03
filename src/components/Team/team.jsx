@@ -31,24 +31,25 @@ const TeamCard = ({ member, linkedin }) => {
 }
 
 const Team = () => {
-  const mainTeamMembers = [
+  const hodMember = {
+    name: "Dr. Vijay Kotkar",
+    position: "Patron & Strategic Mentor",
+    image: "/E-CELL-WEBSITE/images/team/hod.jpeg",
+    linkedin: "",
+  }
+
+  const advisorMembers = [
+    {
+      name: "Dr.Vaishali Kulloli",
+      position: "Faculty Advisor",
+      image: "/E-CELL-WEBSITE/images/team/kulloli.jpeg",
+      linkedin: "",
+    },
     {
       name: "Bhagyesh Makhmale",
       position: "Student Advisor",
-      image: "/images/team/Bhagyesh.jpg", // corrected image path
+      image: "/E-CELL-WEBSITE/images/team/Bhagyesh.png",
       linkedin: "https://www.linkedin.com/in/bhagyesh-makhamale/",
-    },
-    {
-      name: "Vaishali Kulloli",
-      position: "Faculty Advisor",
-      image: "/images/team/kulloli.jpeg", // corrected image path
-      linkedin: "https://www.linkedin.com/in/vaishali-kulloli/",
-    },
-    {
-      name: "Dr. Tushar Gaikwad",
-      position: "Patron & Strategic Mentor",
-      image: "/images/team/hod.jpeg", // corrected image path
-      linkedin: "https://www.linkedin.com/in/tushar-gaikwad/",
     },
   ]
 
@@ -60,8 +61,12 @@ const Team = () => {
       </div>
 
       <section className="team-section">
-        <div className="team-grid">
-          {mainTeamMembers.map((member, index) => (
+        <div className="team-grid-hod">
+          <TeamCard member={hodMember} linkedin={hodMember.linkedin} />
+        </div>
+
+        <div className="team-grid-advisors">
+          {advisorMembers.map((member, index) => (
             <TeamCard key={index} member={member} linkedin={member.linkedin} />
           ))}
         </div>

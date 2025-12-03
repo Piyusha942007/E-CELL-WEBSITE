@@ -38,45 +38,39 @@ const AllTeam = () => {
   const teamData = {
     coreTeam: [
       {
-        name: "Bhagyesh Makhmale",
-        position: "Student Advisor",
-        image: "/images/team/Bhagyesh.jpg",
-        linkedin: "https://www.linkedin.com/in/bhagyesh-makhamale/",
-      },
-      {
         name: "Aditya Divate",
         position: "Head of Operations",
-        image: "/images/team/aditya.JPG",
-        linkedin: "",
+        image: "/E-CELL-WEBSITE/images/team/adityaa.jpeg",
+        linkedin: "https://www.linkedin.com/in/aditya-divate-4b7b5726b/",
       },
       {
         name: "Advait Kulkarni",
         position: "Chair, ECELL",
-        image: "/placeholder.svg", // No image yet - using placeholder
-        linkedin: "",
+        image: "/E-CELL-WEBSITE/images/team/Advait.jpg",
+        linkedin: "https://www.linkedin.com/in/advait-kulkarni-k168/",
       },
       {
         name: "Kadambari Khedekar",
         position: "Deputy Chair",
-        image: "/placeholder.svg", // No image yet - using placeholder
+        image: "/E-CELL-WEBSITE/images/team/.jpg",
         linkedin: "https://www.linkedin.com/in/kadambari-arvind-khedekar-203100327/",
       },
       {
         name: "Siddhesh Kirve",
         position: "Secretary",
-        image: "/placeholder.svg", // No image yet - using placeholder
+        image: "/E-CELL-WEBSITE/images/team/Siddhesh.jpg",
         linkedin: "https://www.linkedin.com/in/siddhesh-kirve-2aa2ba329/",
       },
       {
         name: "Krish Sarode",
-        position: "Treasurer",
-        image: "/placeholder.svg", // No image yet - using placeholder
+        position: "Head of Finance",
+        image: "/E-CELL-WEBSITE/images/team/.jpg",
         linkedin: "https://www.linkedin.com/in/krish-sarode-68b53332b/",
       },
       {
         name: "Disha Marne",
-        position: "Co-Treasurer",
-        image: "/placeholder.svg", // No image yet - using placeholder
+        position: "Joint Head of Finance and Resources",
+        image: "/E-CELL-WEBSITE/images/team/.jpg",
         linkedin: "https://www.linkedin.com/in/disha-marne-64a74a292/",
       },
     ],
@@ -84,25 +78,25 @@ const AllTeam = () => {
       {
         name: "Himanshee Jaiswal",
         position: "Chair, External Affairs",
-        image: "/images/team/Himanshee.jpg", // Corrected filename (was missing .jpg)
-        linkedin: "https://www.linkedin.com/in/himanshee-jaiswal/",
+        image: "/E-CELL-WEBSITE/images/team/Himanshee.jpg",
+        linkedin: "https://www.linkedin.com/in/himansheejaiswal/",
       },
       {
         name: "Akash Patil",
-        position: "Executive Co-Lead",
-        image: "/placeholder.svg", // No image yet - using placeholder
+        position: "Joint Head of Execution and Personal Relations",
+        image: "/E-CELL-WEBSITE/images/team/akashh.jpeg",
         linkedin: "https://www.linkedin.com/in/akash-patil-b1119a32a/",
       },
       {
         name: "Ketaki Shivange",
         position: "Member",
-        image: "/placeholder.svg", // No image yet - using placeholder
+        image: "/E-CELL-WEBSITE/images/team/Ketaki.jpg",
         linkedin: "https://www.linkedin.com/in/ketaki-shivange-18005932b/",
       },
       {
         name: "Ritika Kolte",
         position: "Member",
-        image: "/images/team/Ritika.jpg",
+        image: "/E-CELL-WEBSITE/images/team/Ritika.jpg",
         linkedin: "https://www.linkedin.com/in/kolte-ritika-889832312/",
       },
     ],
@@ -110,33 +104,33 @@ const AllTeam = () => {
       {
         name: "Piyusha Amrutkar",
         position: "Head of Technical Operations",
-        image: "/placeholder.svg", // No image yet - using placeholder
+        image: "/placeholder.svg",
         linkedin: "https://www.linkedin.com/in/piyusha-amrutkar-901918328/",
       },
       {
         name: "Samiksha Ner",
         position: "Joint Head of Technical Operations",
-        image: "/images/team/samikhaaa.jpeg", // Corrected filename (triple 'a')
+        image: "/E-CELL-WEBSITE/images/team/samikshaaa.jpeg",
         linkedin: "https://www.linkedin.com/in/samikshaner/",
       },
     ],
     socialMediaTeam: [
       {
         name: "Anushka Agam",
-        position: "Head and content strategy for online presence",
-        image: "/placeholder.svg", // No image yet - using placeholder
+        position: "Head and content strategist for online presence,branding and social media",
+        image: "/E-CELL-WEBSITE/images/team/ANUSHKA.jpg",
         linkedin: "https://www.linkedin.com/in/anushka-agam-1b552632b/",
       },
       {
         name: "Aryan Digambare",
-        position: "Social Media Co-Lead",
-        image: "/placeholder.svg", // No image yet - using placeholder
+        position: "Joint Head for online presence,branding and social media",
+        image: "/E-CELL-WEBSITE/images/team/Aryan.jpg",
         linkedin: "https://www.linkedin.com/in/aryan-digambare-76105732b/",
       },
       {
         name: "Mrunmayee Khot",
         position: "Member",
-        image: "/placeholder.svg", // No image yet - using placeholder
+        image: "/E-CELL-WEBSITE/images/team/.jpg",
         linkedin: "https://www.linkedin.com/in/mrunmayee-khot-14a06132b/",
       },
     ],
@@ -144,25 +138,25 @@ const AllTeam = () => {
       {
         name: "Esha Pansare",
         position: "Head of Marketing",
-        image: "/placeholder.svg", // No image yet - using placeholder
+        image: "/placeholder.svg",
         linkedin: "https://www.linkedin.com/in/esha-pansare-6106ab290/",
       },
       {
         name: "Shreyas Kadav",
         position: "Chair, Internal Affairs",
-        image: "/images/team/Shreyas.png",
+        image: "/E-CELL-WEBSITE/images/team/Shreyas.png",
         linkedin: "https://www.linkedin.com/in/shreyas-kadav-67b213323/",
       },
       {
         name: "Aditya Kute",
         position: "Member",
-        image: "/placeholder.svg", // No image yet - using placeholder
+        image: "/E-CELL-WEBSITE/images/team/.jpg",
         linkedin: "https://www.linkedin.com/in/aditya-kute-732bb8328/",
       },
       {
         name: "Shridhar Kulkarni",
         position: "Member",
-        image: "/placeholder.svg", // No image yet - using placeholder
+        image: "/E-CELL-WEBSITE/images/team/Shridhar.jpg",
         linkedin: "https://www.linkedin.com/in/shridhar-kulkarni-374b93200/",
       },
     ],
@@ -170,34 +164,34 @@ const AllTeam = () => {
       {
         name: "Utkarsh Kashid",
         position: "Head of Design and Visual Communications",
-        image: "/placeholder.svg", // No image yet - using placeholder
+        image: "/placeholder.svg",
         linkedin: "https://www.linkedin.com/in/utkarsh-kashid-44843132b/",
       },
       {
         name: "Aditya Kashid",
-        position: "Design Co-Lead",
-        image: "/placeholder.svg", // No image yet - using placeholder
+        position: " Joint Head of Design and Visual Communications ",
+        image: "/E-CELL-WEBSITE/images/team/Adityaka.jpg",
         linkedin: "https://www.linkedin.com/in/adityakashid746/",
       },
       {
         name: "Manthan Patil",
         position: "Member",
-        image: "/placeholder.svg", // No image yet - using placeholder
+        image: "/E-CELL-WEBSITE/images/team/Manthan.jpg",
         linkedin: "https://www.linkedin.com/in/manthan-patil-738812377/",
       },
     ],
     facultyAdvisors: [
       {
-        name: "Vaishali Kulloli",
+        name: "Dr.Vaishali Kulloli",
         position: "Faculty Advisor",
-        image: "/images/team/kulloli.jpeg",
-        linkedin: "https://www.linkedin.com/in/vaishali-kulloli/",
+        image: "/E-CELL-WEBSITE/images/team/kulloli.jpeg",
+        linkedin: "",
       },
       {
-        name: "Dr. Tushar Gaikwad",
+        name: "Dr.Vijay Kotkar",
         position: "Patron & Strategic Mentor",
-        image: "/images/team/hod.jpeg",
-        linkedin: "https://www.linkedin.com/in/tushar-gaikwad/",
+        image: "/E-CELL-WEBSITE/images/team/hod.jpeg",
+        linkedin: "",
       },
     ],
   }

@@ -1,67 +1,35 @@
-/* Complete redesign with white theme and new color palette */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Updated grid layout for hierarchical structure */
+.team-grid-hod {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
-.team-container {
-  min-height: 100vh;
-  background-color: #f6f9fc;
-  padding: 80px 40px;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  position: relative;
-  z-index: 1;
+.team-grid-hod .team-card {
+  width: 100%;
+  max-width: 320px;
 }
 
-/* Header Section */
-.team-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.team-header-subtitle {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #635bff;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  margin-bottom: 12px;
-}
-
-.team-header-title {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #0a2540;
-  letter-spacing: -0.5px;
-  font-family: "Plus Jakarta Sans", sans-serif;
-}
-
-/* Team Section */
-.team-section {
-  margin-bottom: 60px;
-}
-
-.section-title {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #0a2540;
-  margin-bottom: 36px;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  letter-spacing: -0.5px;
-}
-
-/* Grid layout for static cards */
-.team-grid {
+.team-grid-advisors {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 32px;
-  max-width: 1200px;
+  max-width: 700px;
   margin: 0 auto;
-  /* changed from auto-fit to fixed 3-column layout so cards stay same size */
 }
 
-/* Static card design without flip animation */
+.team-grid-advisors .team-card {
+  width: 100%;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .team-grid-advisors {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 .team-card {
   background-color: #ffffff;
   border-radius: 12px;
@@ -80,32 +48,36 @@
 
 .team-card-image {
   width: 100%;
-  height: 240px;
+  height: 280px;            /* was 240 – give more room */
   overflow: hidden;
   background-color: #f6f9fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .team-card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;        /* nice card fill */
+  object-position: center top;  /* keep faces in frame */
+  transform: none;          /* ❌ remove extra zoom */
   transition: transform 0.3s ease;
 }
 
 .team-card:hover .team-card-image img {
-  transform: scale(1.05);
+  transform: scale(1.04);   /* very slight hover zoom only */
 }
 
-/* Card content section */
+
+
+
 .team-card-content {
   padding: 24px 20px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  flex: 1;
 }
 
 .team-card-name {
@@ -123,8 +95,6 @@
   line-height: 1.4;
 }
 
-/* Social icons styling */
-/* Removed email icon styling, adjusted social icons to only show LinkedIn */
 .team-card-social {
   display: flex;
   gap: 12px;
@@ -159,7 +129,59 @@
   height: 20px;
 }
 
-/* View More Button */
+/* Original header and container styles */
+.team-container {
+  min-height: 100vh;
+  background-color: #f6f9fc;
+  padding: 80px 40px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.team-header-subtitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #635bff;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 12px;
+}
+
+.team-header-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0a2540;
+  letter-spacing: -0.5px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.team-section {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0a2540;
+  margin-bottom: 36px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .view-more-container {
   display: flex;
   justify-content: center;
@@ -193,7 +215,6 @@
   transform: translateY(0);
 }
 
-/* Back button */
 .back-button-container {
   display: flex;
   justify-content: center;
@@ -237,7 +258,11 @@
 
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
-    /* changed from auto-fit to fixed 2-column layout on tablet */
+    gap: 24px;
+  }
+
+  .team-grid-advisors {
+    grid-template-columns: 1fr;
     gap: 24px;
   }
 
@@ -273,7 +298,11 @@
 
   .team-grid {
     grid-template-columns: 1fr;
-    /* kept 1 column on mobile */
+    gap: 16px;
+  }
+
+  .team-grid-advisors {
+    grid-template-columns: 1fr;
     gap: 16px;
   }
 
