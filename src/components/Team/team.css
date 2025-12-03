@@ -1,0 +1,289 @@
+/* Complete redesign with white theme and new color palette */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.team-container {
+  min-height: 100vh;
+  background-color: #f6f9fc;
+  padding: 80px 40px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header Section */
+.team-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.team-header-subtitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #635bff;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 12px;
+}
+
+.team-header-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0a2540;
+  letter-spacing: -0.5px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Team Section */
+.team-section {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0a2540;
+  margin-bottom: 36px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  letter-spacing: -0.5px;
+}
+
+/* Grid layout for static cards */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* changed from auto-fit to fixed 3-column layout so cards stay same size */
+}
+
+/* Static card design without flip animation */
+.team-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(10, 37, 64, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.team-card:hover {
+  box-shadow: 0 8px 24px rgba(10, 37, 64, 0.12);
+  transform: translateY(-4px);
+}
+
+.team-card-image {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background-color: #f6f9fc;
+}
+
+.team-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover .team-card-image img {
+  transform: scale(1.05);
+}
+
+/* Card content section */
+.team-card-content {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.team-card-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0a2540;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  margin-bottom: 4px;
+}
+
+.team-card-position {
+  font-size: 0.875rem;
+  color: #425466;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Social icons styling */
+/* Removed email icon styling, adjusted social icons to only show LinkedIn */
+.team-card-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  justify-content: flex-start;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.linkedin-icon {
+  background-color: #0a66c2;
+}
+
+.linkedin-icon:hover {
+  background-color: #0952a4;
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(10, 102, 194, 0.3);
+}
+
+.social-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* View More Button */
+.view-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.view-more-button {
+  display: inline-block;
+  padding: 12px 32px;
+  background-color: #635bff;
+  color: #ffffff;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.view-more-button:hover {
+  background-color: #4f46e5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 91, 255, 0.3);
+}
+
+.view-more-button:active {
+  transform: translateY(0);
+}
+
+/* Back button */
+.back-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 12px 32px;
+  background-color: transparent;
+  color: #635bff;
+  border: 2px solid #635bff;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+}
+
+.back-button:hover {
+  background-color: #635bff;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .team-container {
+    padding: 60px 24px;
+  }
+
+  .team-header-title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+    margin-bottom: 24px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* changed from auto-fit to fixed 2-column layout on tablet */
+    gap: 24px;
+  }
+
+  .team-card-image {
+    height: 200px;
+  }
+
+  .team-card-content {
+    padding: 16px;
+  }
+
+  .team-card-name {
+    font-size: 1rem;
+  }
+
+  .team-card-position {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-container {
+    padding: 40px 16px;
+  }
+
+  .team-header-title {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.125rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    /* kept 1 column on mobile */
+    gap: 16px;
+  }
+
+  .team-card-image {
+    height: 180px;
+  }
+
+  .view-more-button,
+  .back-button {
+    padding: 10px 24px;
+    font-size: 0.875rem;
+  }
+}
