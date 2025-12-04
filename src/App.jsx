@@ -1,23 +1,20 @@
+// src/App.jsx
 import { Routes, Route } from 'react-router-dom';
-
-// 1. Utilities
-import ScrollToTop from './components/ScrollToTop';
-import SocialSidebar from './components/SocialSidebar';
-
-// 2. Components for the Home Page
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Inauguration from './components/Inauguration';
 import Initiatives from './components/Initiatives';
-import Team from './components/Team';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Team from './components/Team/team.jsx';
+import AllTeam from './components/Team/allteam.jsx';
 
-// 3. Separate Pages
+import './components/Team/team.css';
+
+import Footer from './components/Footer';
 import UdbhavPage from './pages/UdbhavPage';
 import ComingSoonPage from './pages/ComingSoonPage';
+import SocialSidebar from './components/SocialSidebar';
+import Contact from './components/Contact';
 
-// The Main Landing Page (Stacks all sections)
 const Home = () => {
   return (
     <>
@@ -34,16 +31,17 @@ const Home = () => {
 
 function App() {
   return (
-    <div className="relative bg-white min-h-screen">
-      {/* GLOBAL UTILITIES */}
-      <ScrollToTop />   {/* Ensures every page load starts at the top */}
-      <SocialSidebar /> {/* Floating sidebar visible on all pages */}
+    <div className="relative">
+      {/* layout pieces shown on every page */}
+      <SocialSidebar />
 
-      {/* PAGE ROUTING */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/udbhav" element={<UdbhavPage />} />
         <Route path="/coming-soon" element={<ComingSoonPage />} />
+        <Route path="/team" element={<Team />} />
+        <Route path="/allteam" element={<AllTeam />} />
+        <Route path="/all-team" element={<AllTeam />} /> {/* hyphen variant */}
       </Routes>
     </div>
   );
