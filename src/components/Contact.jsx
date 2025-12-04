@@ -1,43 +1,49 @@
-import React, { useRef, useState } from 'react';
-import { Mail, MapPin, Phone, Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, MapPin, Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import FadeIn from './FadeIn';
-import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-  const form = useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [status, setStatus] = useState(null); // null | 'success' | 'error'
+  const [result, setResult] = useState(null); // 'success' or 'error'
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  const onSubmit = async (event) => {
+    event.preventDefault();
     setIsSubmitting(true);
-    setStatus(null);
+    setResult(null);
 
-    // ---------------------------------------------------------
-    // REPLACE THESE WITH YOUR ACTUAL KEYS FROM EMAILJS DASHBOARD
-    // ---------------------------------------------------------
-    const SERVICE_ID = 'service_xyz'; // Example: service_82648
-    const TEMPLATE_ID = 'template_xyz'; // Example: template_8473
-    const PUBLIC_KEY = 'public_key_xyz'; // Example: user_827482
-    // ---------------------------------------------------------
+    const formData = new FormData(event.target);
 
-    emailjs
-      .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, {
-        publicKey: PUBLIC_KEY,
-      })
-      .then(
-        () => {
-          setIsSubmitting(false);
-          setStatus('success');
-          form.current.reset(); // Clear form
-          setTimeout(() => setStatus(null), 5000); // Hide success msg after 5s
-        },
-        (error) => {
-          console.error('FAILED...', error.text);
-          setIsSubmitting(false);
-          setStatus('error');
-        },
-      );
+    // =========================================================
+    // 👇 PASTE YOUR ACCESS KEY FROM WEB3FORMS HERE 👇
+    // =========================================================
+    formData.append("access_key", "8feadf34-8a1b-456a-adf4-5517f1bdde11"); 
+    // =========================================================
+
+    formData.append("subject", "New Inquiry from PCCOER Website"); // Custom Subject
+    formData.append("from_name", "PCCOER E-Cell Website"); // Custom Sender Name
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult('success');
+        event.target.reset(); // Clear the form
+        setTimeout(() => setResult(null), 5000); // Hide success message after 5s
+      } else {
+        console.error("Error:", data);
+        setResult('error');
+      }
+    } catch (error) {
+      console.error("Submission Error:", error);
+      setResult('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -53,8 +59,7 @@ const Contact = () => {
               Let's Build Something Together
             </h2>
             <p className="text-secondary mt-4 max-w-2xl mx-auto">
-              Whether you are a student with an idea, an investor looking for the next unicorn, 
-              or a mentor wanting to give back—we want to hear from you.
+              We want to hear from you. Reach out for collaborations, incubation, or queries.
             </p>
           </div>
         </FadeIn>
@@ -62,7 +67,7 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           
           {/* LEFT: Contact Info Cards */}
-          <div className="space-y-6">
+          <div className="space-y-6 flex flex-col justify-center">
             <FadeIn delay={0.2}>
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start hover:shadow-md transition-shadow">
                 <div className="bg-blue-50 p-3 rounded-lg mr-4 text-accent">
@@ -71,7 +76,7 @@ const Contact = () => {
                 <div>
                   <h4 className="font-bold text-primary text-lg mb-1">Email Us</h4>
                   <p className="text-secondary text-sm mb-2">For general inquiries.</p>
-                  <a href="mailto:piyushaamrutkar007@gmail.com" className="text-accent font-semibold hover:underline">
+                  <a href="mailto:ecell@pccoer.in" className="text-accent font-semibold hover:underline">
                     ecell@pccoer.in
                   </a>
                 </div>
@@ -79,14 +84,6 @@ const Contact = () => {
             </FadeIn>
 
             <FadeIn delay={0.3}>
-              <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start hover:shadow-md transition-shadow">
-                <div className="bg-green-50 p-3 rounded-lg mr-4 text-green-600">
-                  <Phone className="w-6 h-6" />
-                </div>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.4}>
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start hover:shadow-md transition-shadow">
                 <div className="bg-purple-50 p-3 rounded-lg mr-4 text-purple-600">
                   <MapPin className="w-6 h-6" />
@@ -102,19 +99,23 @@ const Contact = () => {
             </FadeIn>
           </div>
 
-          {/* RIGHT: The Functional Form */}
-          <FadeIn delay={0.5}>
-            <form ref={form} onSubmit={sendEmail} className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-gray-100 relative">
+          {/* RIGHT: The Live Form */}
+          <FadeIn delay={0.4}>
+            <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-gray-100 relative">
               
-              <div className="space-y-6">
+              <form onSubmit={onSubmit} className="space-y-6">
+                
+                {/* Honeypot to prevent spam bots (Hidden) */}
+                <input type="checkbox" name="botcheck" className="hidden" style={{display: 'none'}} />
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-bold text-primary mb-2">First Name</label>
                     <input 
                       type="text" 
-                      name="first_name" // Required for EmailJS
+                      name="First Name" 
                       required
-                      placeholder="Your First Name" 
+                      placeholder="First Name" 
                       className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all placeholder:text-gray-400"
                     />
                   </div>
@@ -122,8 +123,8 @@ const Contact = () => {
                     <label className="block text-sm font-bold text-primary mb-2">Last Name</label>
                     <input 
                       type="text" 
-                      name="last_name" // Required for EmailJS
-                      placeholder="Your Last Name" 
+                      name="Last Name"
+                      placeholder="Last Name" 
                       className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all placeholder:text-gray-400"
                     />
                   </div>
@@ -133,7 +134,7 @@ const Contact = () => {
                   <label className="block text-sm font-bold text-primary mb-2">Email Address</label>
                   <input 
                     type="email" 
-                    name="user_email" // Required for EmailJS
+                    name="email" 
                     required
                     placeholder="you@example.com" 
                     className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all placeholder:text-gray-400"
@@ -143,7 +144,7 @@ const Contact = () => {
                 <div>
                   <label className="block text-sm font-bold text-primary mb-2">Message</label>
                   <textarea 
-                    name="message" // Required for EmailJS
+                    name="message" 
                     required
                     rows="4" 
                     placeholder="Tell us about your query..." 
@@ -165,20 +166,24 @@ const Contact = () => {
                   )}
                 </button>
 
-                {/* Status Messages */}
-                {status === 'success' && (
-                  <div className="flex items-center justify-center p-3 mt-4 bg-green-100 text-green-700 rounded-lg">
-                    <CheckCircle className="w-5 h-5 mr-2" /> Message Sent Successfully!
-                  </div>
-                )}
-                {status === 'error' && (
-                  <div className="flex items-center justify-center p-3 mt-4 bg-red-100 text-red-700 rounded-lg">
-                    <AlertCircle className="w-5 h-5 mr-2" /> Failed to send. Try again.
+                {/* Success Message */}
+                {result === 'success' && (
+                  <div className="flex items-center justify-center p-4 mt-4 bg-green-50 text-green-700 rounded-xl border border-green-100 animate-in fade-in slide-in-from-bottom-2">
+                    <CheckCircle className="w-5 h-5 mr-2" /> 
+                    <span className="font-semibold">Message sent! We'll get back to you soon.</span>
                   </div>
                 )}
 
-              </div>
-            </form>
+                {/* Error Message */}
+                {result === 'error' && (
+                  <div className="flex items-center justify-center p-4 mt-4 bg-red-50 text-red-700 rounded-xl border border-red-100 animate-in fade-in slide-in-from-bottom-2">
+                    <AlertCircle className="w-5 h-5 mr-2" /> 
+                    <span className="font-semibold">Something went wrong. Please try again.</span>
+                  </div>
+                )}
+
+              </form>
+            </div>
           </FadeIn>
 
         </div>

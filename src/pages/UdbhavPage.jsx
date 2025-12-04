@@ -15,7 +15,7 @@ const UdbhavPage = () => {
       tagline: "SMART GYM MEMBERSHIPS",
       desc: "Solving fitness inconsistency. FitBudget allows students and professionals to choose flexible, budget-friendly fitness plans.",
       icon: <Trophy className="w-6 h-6 text-yellow-600" />,
-      image: `${publicUrl}winner-1.jpg` 
+      image: `${publicUrl}udbhav/winner-1.png` 
     },
     {
       id: "02",
@@ -23,7 +23,7 @@ const UdbhavPage = () => {
       tagline: "SUSTAINABLE GARDENING",
       desc: "Wellness meets sustainability. Easy-to-use, eco-friendly gardening kits designed for busy urban professionals.",
       icon: <Trophy className="w-6 h-6 text-gray-500" />,
-      image: `${publicUrl}winner-2.jpg`
+      image: `${publicUrl}udbhav/winner-2.png`
     },
     {
       id: "03",
@@ -31,7 +31,7 @@ const UdbhavPage = () => {
       tagline: "ON-DEMAND REPAIRS",
       desc: "Connecting users with verified local experts. FixIt ensures reliable, transparent, and organized services.",
       icon: <Trophy className="w-6 h-6 text-orange-600" />,
-      image: `${publicUrl}winner-3.jpg`
+      image: `${publicUrl}udbhav/winner-3.png`
     }
   ];
 
