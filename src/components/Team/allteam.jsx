@@ -33,8 +33,7 @@ const TeamCard = ({ member, linkedin }) => {
 const AllTeam = () => {
   const navigate = useNavigate()
 
-
-  // 2. High Command (Ops, Chair, Deputy)
+  // 1. High Command
   const highCommand = [
     {
       name: "Aditya Divate",
@@ -56,7 +55,7 @@ const AllTeam = () => {
     },
   ]
 
-  // 3. Admin Core
+  // 2. Admin Core
   const adminCore = [
     {
       name: "Himanshee Jaiswal",
@@ -78,7 +77,7 @@ const AllTeam = () => {
     },
   ]
 
-  // 4. Finance (Separated for Mobile Styling)
+  // 3. Finance (Standard Vertical Stack on Mobile)
   const financeTeam = [
     {
       name: "Krish Sarode",
@@ -94,29 +93,29 @@ const AllTeam = () => {
     },
   ]
 
-  // 5. Execution Team (Akash, Ketaki, Ritika)
+  // 4. Execution Team
   const executionTeam = [
     {
       name: "Akash Patil",
-      position: "Joint Head of Execution and PR",
+      position: "Joint Head of Execution and Personal Relations",
       image: "/E-CELL-WEBSITE/images/team/akashh.jpeg",
       linkedin: "https://www.linkedin.com/in/akash-patil-b1119a32a/",
     },
     {
       name: "Ketaki Shivange",
-      position: "Member",
+      position: "Execution and Personal Relations Member",
       image: "/E-CELL-WEBSITE/images/team/Ketaki.jpg",
       linkedin: "https://www.linkedin.com/in/ketaki-shivange-18005932b/",
     },
     {
       name: "Ritika Kolte",
-      position: "Member",
+      position: "Execution and Personal Relations Member",
       image: "/E-CELL-WEBSITE/images/team/Ritika.jpg",
       linkedin: "https://www.linkedin.com/in/kolte-ritika-889832312/",
     },
   ]
 
-  // 6. Technical Operations (Piyusha, Samiksha)
+  // 5. Technical Operations
   const techTeam = [
     {
       name: "Piyusha Amrutkar",
@@ -132,48 +131,50 @@ const AllTeam = () => {
     },
   ]
 
-  // 7. Social Media
+  // 6. Social Media
   const socialMediaTeam = [
     {
       name: "Anushka Agam",
-      position: "Head - Social Media & Branding",
+      position: "Head and content strategist for online presence, branding and social media ",
       image: "/E-CELL-WEBSITE/images/team/ANUSHKA.jpg",
       linkedin: "https://www.linkedin.com/in/anushka-agam-1b552632b/",
     },
     {
       name: "Aryan Digambare",
-      position: "Joint Head - Social Media",
+      position: "Joint Head for online presence, branding and social media ",
       image: "/E-CELL-WEBSITE/images/team/Aryan.jpg",
       linkedin: "https://www.linkedin.com/in/aryan-digambare-76105732b/",
     },
     {
       name: "Mrunmayee Khot",
-      position: "Member",
+      position: "Social Media Member",
       image: "/E-CELL-WEBSITE/images/team/Mrunmayee.jpg",
       linkedin: "https://www.linkedin.com/in/mrunmayee-khot-14a06132b/",
     },
   ]
 
+  // 7. Design
   const designTeam = [
     {
       name: "Utkarsh Kashid",
-      position: "Head of Design",
+      position: "Head of Design and Visual Communications ",
       image: "/placeholder.svg",
       linkedin: "https://www.linkedin.com/in/utkarsh-kashid-44843132b/",
     },
     {
       name: "Aditya Kashid",
-      position: "Joint Head of Design",
+      position: "Joint Head of Design and Visual Communications",
       image: "/E-CELL-WEBSITE/images/team/Adityaka.jpg",
       linkedin: "https://www.linkedin.com/in/adityakashid746/",
     },
     {
       name: "Manthan Patil",
-      position: "Member",
+      position: "Design and Visual Communications Member",
       image: "/E-CELL-WEBSITE/images/team/Manthan.jpg",
       linkedin: "https://www.linkedin.com/in/manthan-patil-738812377/",
     },
   ]
+
   // 8. Marketing
   const marketingTeam = [
     {
@@ -184,18 +185,17 @@ const AllTeam = () => {
     },
     {
       name: "Aditya Kute",
-      position: "Member",
+      position: "Marketing Member",
       image: "/E-CELL-WEBSITE/images/team/.jpg", 
       linkedin: "https://www.linkedin.com/in/aditya-kute-732bb8328/",
     },
     {
       name: "Shridhar Kulkarni",
-      position: "Member",
+      position: "Marketing Member",
       image: "/E-CELL-WEBSITE/images/team/Shridhar.jpg",
       linkedin: "https://www.linkedin.com/in/shridhar-kulkarni-374b93200/",
     },
   ]
-
 
   return (
     <div className="team-container">
@@ -207,57 +207,56 @@ const AllTeam = () => {
       <section className="team-section">
         <div className="hierarchy-section">
           
-
-          {/* 2. Ops, Chair, Deputy */}
+          {/* 1. Ops, Chair, Deputy */}
           <div className="hierarchy-row">
             {highCommand.map((member, index) => (
               <TeamCard key={index} member={member} linkedin={member.linkedin} />
             ))}
           </div>
 
-          {/* 3. Ext, Int, Sec */}
+          {/* 2. Ext, Int, Sec */}
           <div className="hierarchy-row">
             {adminCore.map((member, index) => (
               <TeamCard key={index} member={member} linkedin={member.linkedin} />
             ))}
           </div>
 
-          {/* 4. Finance (FORCED SIDE-BY-SIDE MOBILE) */}
-          <div className="finance-row">
+          {/* 3. Finance (Now using standard row - Vertical on Mobile) */}
+          <div className="hierarchy-row">
             {financeTeam.map((member, index) => (
               <TeamCard key={index} member={member} linkedin={member.linkedin} />
             ))}
           </div>
 
-          {/* 5. Execution (Moved up) */}
+          {/* 4. Execution */}
           <div className="hierarchy-row">
             {executionTeam.map((member, index) => (
               <TeamCard key={index} member={member} linkedin={member.linkedin} />
             ))}
           </div>
 
-          {/* 6. Technical */}
+          {/* 5. Technical */}
           <div className="hierarchy-row">
             {techTeam.map((member, index) => (
               <TeamCard key={index} member={member} linkedin={member.linkedin} />
             ))}
           </div>
 
-          {/* 7. Social Media */}
+          {/* 6. Social Media */}
           <div className="hierarchy-row">
             {socialMediaTeam.map((member, index) => (
               <TeamCard key={index} member={member} linkedin={member.linkedin} />
             ))}
           </div>
 
-          {/* 8. Marketing */}
+          {/* 7. Design */}
           <div className="hierarchy-row">
             {designTeam.map((member, index) => (
               <TeamCard key={index} member={member} linkedin={member.linkedin} />
             ))}
           </div>
 
-          {/* 9. Design */}
+          {/* 8. Marketing */}
           <div className="hierarchy-row">
             {marketingTeam.map((member, index) => (
               <TeamCard key={index} member={member} linkedin={member.linkedin} />

@@ -11,24 +11,19 @@
   max-width: 240px;
 }
 
+/* Advisors Grid - Default Desktop */
 .team-grid-advisors {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 24px;
-  max-width: 500px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 .team-grid-advisors .team-card {
-  width: 100%;
-}
-
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-  .team-grid-advisors {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
+  width: 220px;
+  flex-shrink: 0;
 }
 
 .team-card {
@@ -260,6 +255,7 @@
   margin-bottom: 40px;
 }
 
+/* Standard rows: Vertical on mobile, Horizontal on desktop */
 .hierarchy-row {
   display: flex;
   flex-wrap: wrap;
@@ -269,25 +265,11 @@
   max-width: 1200px;
 }
 
-/* Desktop default: Side-by-side cards */
 .hierarchy-row .team-card {
-  width: 220px;         
-  flex-shrink: 0;       
-  max-width: 100%;
-}
-
-/* --- FINANCE ROW (Strict Side-by-Side on Mobile) --- */
-.finance-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-  width: 100%;
-}
-
-.finance-row .team-card {
   width: 220px;
+  flex-shrink: 0;
 }
+
 
 /* =========================================
    MOBILE RESPONSIVE OVERRIDES (Max 600px) 
@@ -301,7 +283,7 @@
     font-size: 1.8rem;
   }
 
-  /* 1. REGULAR HIERARCHY: Stack Vertically (One per line) */
+  /* 1. STANDARD HIERARCHY: Stack Vertically (One per line) */
   .hierarchy-row {
     flex-direction: column;
     align-items: center;
@@ -309,45 +291,52 @@
   }
 
   .hierarchy-row .team-card {
-    width: 100%;        /* Full width */
-    max-width: 280px;   /* Limit width so they don't look too big */
+    width: 100%;        
+    max-width: 280px;   
   }
 
-  /* 2. FINANCE ROW: Strict Side-by-Side (Two per line) */
-  .finance-row {
-    flex-direction: row;          /* Force row direction */
+  /* 2. ADVISORS ONLY: Strict Side-by-Side (Two per line) */
+  .team-grid-advisors {
+    flex-direction: row;          
     flex-wrap: nowrap !important; /* Force single line */
-    gap: 10px !important;
+    gap: 10px !important;         /* Tight gap */
     width: 100%;
     padding: 0 5px;
     box-sizing: border-box;
   }
 
-  .finance-row .team-card {
+  /* Force cards to fit 50% width */
+  .team-grid-advisors .team-card {
     width: 50% !important;
-    max-width: none;              /* Override any max-width */
+    max-width: none;              
     min-width: 0 !important;
     flex-shrink: 1 !important;
   }
 
-  /* Finance Row Specific: Shrink image to fit layout */
-  .finance-row .team-card-image {
+  /* Shrink images to save space */
+  .team-grid-advisors .team-card-image {
     min-height: 120px !important;
     max-height: 140px;
+    aspect-ratio: auto; 
   }
 
-  /* Finance Row Specific: Smaller Text */
-  .finance-row .team-card-name {
+  /* Shrink text specifically for these squeezed rows */
+  .team-grid-advisors .team-card-name {
     font-size: 0.85rem !important;
     margin-bottom: 2px;
+    white-space: nowrap;          
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  .finance-row .team-card-position {
+  .team-grid-advisors .team-card-position {
     font-size: 0.65rem !important;
     line-height: 1.1;
+    height: 2.2em; 
+    overflow: hidden;
   }
   
-  .finance-row .team-card-content {
+  .team-grid-advisors .team-card-content {
     padding: 10px 4px !important;
   }
 }

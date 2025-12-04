@@ -61,10 +61,12 @@ const Team = () => {
       </div>
 
       <section className="team-section">
+        {/* HOD (Single Card) */}
         <div className="team-grid-hod">
           <TeamCard member={hodMember} linkedin={hodMember.linkedin} />
         </div>
 
+        {/* Advisors (Forced Side-by-Side on Mobile via CSS) */}
         <div className="team-grid-advisors">
           {advisorMembers.map((member, index) => (
             <TeamCard key={index} member={member} linkedin={member.linkedin} />
