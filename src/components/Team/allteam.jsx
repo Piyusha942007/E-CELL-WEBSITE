@@ -64,7 +64,7 @@ const AllTeam = () => {
       {
         name: "Krish Sarode",
         position: "Head of Finance",
-        image: "/E-CELL-WEBSITE/images/team/.jpg",
+        image: "/E-CELL-WEBSITE/images/team/Krish.jpg",
         linkedin: "https://www.linkedin.com/in/krish-sarode-68b53332b/",
       },
       {
@@ -130,7 +130,7 @@ const AllTeam = () => {
       {
         name: "Mrunmayee Khot",
         position: "Member",
-        image: "/E-CELL-WEBSITE/images/team/.jpg",
+        image: "/E-CELL-WEBSITE/images/team/Mrunmayee.jpg",
         linkedin: "https://www.linkedin.com/in/mrunmayee-khot-14a06132b/",
       },
     ],
@@ -138,7 +138,7 @@ const AllTeam = () => {
       {
         name: "Esha Pansare",
         position: "Head of Marketing",
-        image: "/placeholder.svg",
+        image: "/E-CELL-WEBSITE/images/team/Esha.png",
         linkedin: "https://www.linkedin.com/in/esha-pansare-6106ab290/",
       },
       {
