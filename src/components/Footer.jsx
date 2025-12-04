@@ -1,27 +1,65 @@
 import React from 'react';
 import { Instagram, Linkedin, Mail, MapPin, ExternalLink } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
-  // Configuration for Social Links - Update these URLS if specific handles differ
-  const links = {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // 1. Social Media Configuration (Preserved)
+  const socialLinks = {
     linkedin: "https://www.linkedin.com/in/entrepreneurship-cell-pccoer/",
     instagram: "https://www.instagram.com/ecell.pccoer/",
     email: "mailto:ecell@pccoer.in",
-    // Google Maps link for PCCOER Ravet
     location: "https://maps.app.goo.gl/c1zq7SihBpDHDVhaA?g_st=ac" 
   };
+
+  // 2. Smart Navigation Logic (Matches Navbar.jsx)
+  const handleNavigation = (path, isScrollLink) => {
+    if (isScrollLink) {
+      // If we are already on Home ('/'), just scroll to the section
+      if (location.pathname === '/') {
+        const element = document.querySelector(path);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // If we are on another page, go Home first, then scroll
+        navigate('/');
+        // Wait a tiny bit for Home to load, then scroll
+        setTimeout(() => {
+          const element = document.querySelector(path);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    } else {
+      // Normal Page Navigation (e.g., to /udbhav)
+      navigate(path);
+      window.scrollTo(0, 0);
+    }
+  };
+
+  // 3. Footer Navigation Links (Aligned with Navbar IDs)
+  const footerNavLinks = [
+    { name: 'Home', path: '/', type: 'route' },
+    { name: 'About Us', path: '#about', type: 'scroll' },      // Points to id="about"
+    { name: 'Initiatives', path: '#initiatives', type: 'scroll' }, // Points to id="initiatives"
+    { name: 'Team', path: '#team', type: 'scroll' }           // Points to id="team"
+  ];
 
   return (
     <footer id="contact" className="bg-slate-900 text-white pt-16 md:pt-20 pb-10 border-t border-white/10 font-sans relative overflow-hidden">
       
-      {/* Optional: Subtle background pattern/glow */}
+      {/* Background Glow */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px] -translate-y-1/2 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mb-12 md:mb-16 text-center md:text-left">
           
-          {/* 1. Brand Info Column */}
+          {/* COLUMN 1: Brand Info */}
           <div className="flex flex-col items-center md:items-start">
             <h2 className="text-2xl font-bold mb-4 md:mb-6 tracking-tight text-white">
               PCCOER E-Cell
@@ -34,7 +72,7 @@ const Footer = () => {
             {/* Social Icons */}
             <div className="flex space-x-4">
               <a 
-                href={links.linkedin} 
+                href={socialLinks.linkedin} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Visit LinkedIn"
@@ -43,7 +81,7 @@ const Footer = () => {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a 
-                href={links.instagram} 
+                href={socialLinks.instagram} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Visit Instagram"
@@ -52,7 +90,7 @@ const Footer = () => {
                 <Instagram className="w-5 h-5" />
               </a>
               <a 
-                href={links.email}
+                href={socialLinks.email}
                 aria-label="Send Email"
                 className="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:bg-green-600 hover:text-white hover:border-green-600 transition-all duration-300"
               >
@@ -61,36 +99,33 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* 2. Quick Links Column */}
+          {/* COLUMN 2: Quick Links (Now using Smart Navigation) */}
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg font-bold mb-4 md:mb-6 text-blue-400">Quick Links</h3>
             <ul className="space-y-3 md:space-y-4 w-full max-w-[200px] md:max-w-none">
-              {[
-                { name: 'Home', href: '/' },
-                { name: 'About Us', href: '/about' },
-                { name: 'Initiatives', href: '/initiatives' },
-                { name: 'Startups', href: '/startups' },
-                { name: 'Team', href: '/team' }
-              ].map((item) => (
+              {footerNavLinks.map((item) => (
                 <li key={item.name} className="flex items-center justify-center md:justify-start">
-                  <a href={item.href} className="text-slate-400 hover:text-white transition-colors text-sm md:text-base flex items-center group">
+                  <button 
+                    onClick={() => handleNavigation(item.path, item.type === 'scroll')}
+                    className="text-slate-400 hover:text-white transition-colors text-sm md:text-base flex items-center group bg-transparent border-none p-0 cursor-pointer"
+                  >
                     <span className="w-0 overflow-hidden group-hover:w-3 transition-all duration-300 mr-0 group-hover:mr-2 opacity-0 group-hover:opacity-100 text-blue-400">→</span>
                     {item.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* 3. Contact Info Column */}
+          {/* COLUMN 3: Contact Info */}
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg font-bold mb-4 md:mb-6 text-blue-400">Contact Us</h3>
             <ul className="space-y-4 text-slate-400 text-sm md:text-base w-full max-w-[250px] md:max-w-none">
               
-              {/* Location Link */}
+              {/* Location */}
               <li>
                 <a 
-                  href={links.location} 
+                  href={socialLinks.location} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-start justify-center md:justify-start group hover:text-white transition-colors"
@@ -102,10 +137,10 @@ const Footer = () => {
                 </a>
               </li>
 
-              {/* Email Link */}
+              {/* Email */}
               <li>
                 <a 
-                  href={links.email} 
+                  href={socialLinks.email} 
                   className="flex items-center justify-center md:justify-start group hover:text-white transition-colors"
                 >
                   <Mail className="w-5 h-5 mr-3 text-blue-500 flex-shrink-0 group-hover:text-blue-400" />
@@ -113,10 +148,10 @@ const Footer = () => {
                 </a>
               </li>
 
-              {/* Optional: Directions CTA */}
+              {/* Directions CTA */}
               <li className="pt-2">
                 <a 
-                  href={links.location}
+                  href={socialLinks.location}
                   target="_blank"
                   rel="noopener noreferrer" 
                   className="inline-flex items-center text-xs font-bold uppercase tracking-wider text-blue-400 hover:text-blue-300 border-b border-blue-400/30 hover:border-blue-300 pb-0.5 transition-all"
