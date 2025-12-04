@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
-import FadeIn from './FadeIn';
+import { Mail, MapPin, Send, Loader2, CheckCircle, AlertCircle, Phone, ChevronDown } from 'lucide-react';
+
+// Simple FadeIn Animation Component
+const FadeIn = ({ children, delay = 0 }) => (
+  <div 
+    className="animate-fade-in-up opacity-0" 
+    style={{ animationFillMode: 'forwards', animationDelay: `${delay}s` }}
+  >
+    {children}
+  </div>
+);
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [result, setResult] = useState(null); // 'success' or 'error'
+  const [result, setResult] = useState(null); // null | 'success' | 'error'
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -14,13 +23,12 @@ const Contact = () => {
     const formData = new FormData(event.target);
 
     // =========================================================
-    // 👇 PASTE YOUR ACCESS KEY FROM WEB3FORMS HERE 👇
+    // SECURITY & CONFIGURATION
     // =========================================================
-    formData.append("access_key", "8feadf34-8a1b-456a-adf4-5517f1bdde11"); 
+    formData.append("access_key", "f73f4eb0-2bf6-47ac-8886-fc6f830ded09"); 
+    formData.append("from_name", "PCCOER Website Inquiry");
+    // Subject is now handled dynamically by the Select input below
     // =========================================================
-
-    formData.append("subject", "New Inquiry from PCCOER Website"); // Custom Subject
-    formData.append("from_name", "PCCOER E-Cell Website"); // Custom Sender Name
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -32,14 +40,14 @@ const Contact = () => {
 
       if (data.success) {
         setResult('success');
-        event.target.reset(); // Clear the form
-        setTimeout(() => setResult(null), 5000); // Hide success message after 5s
+        event.target.reset(); // Clear form
+        setTimeout(() => setResult(null), 5000); 
       } else {
-        console.error("Error:", data);
+        console.error("Web3Forms Error:", data);
         setResult('error');
       }
     } catch (error) {
-      console.error("Submission Error:", error);
+      console.error("Network Error:", error);
       setResult('error');
     } finally {
       setIsSubmitting(false);
@@ -47,149 +55,226 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-surface relative overflow-hidden">
+    <section id="contact" className="py-24 bg-slate-50 relative overflow-hidden font-sans">
+      {/* Background Decorative Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-slate-200/50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
+        {/* Header Section */}
         <FadeIn>
           <div className="text-center mb-16">
-            <span className="text-accent font-semibold tracking-wider uppercase text-sm">
-              Connect With Us
+            <span className="inline-block py-1 px-3 rounded-full bg-blue-50 text-blue-600 font-semibold text-xs tracking-wider uppercase mb-3">
+              Get in Touch
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mt-2">
-              Let's Build Something Together
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight">
+              Let's Start a Conversation
             </h2>
-            <p className="text-secondary mt-4 max-w-2xl mx-auto">
-              We want to hear from you. Reach out for collaborations, incubation, or queries.
+            <p className="text-slate-600 mt-4 max-w-2xl mx-auto text-lg leading-relaxed">
+              Interested in incubation, partnerships, or just have a question? We are here to help.
             </p>
           </div>
         </FadeIn>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-12 gap-12 items-start">
           
-          {/* LEFT: Contact Info Cards */}
-          <div className="space-y-6 flex flex-col justify-center">
+          {/* LEFT COLUMN: Contact Information */}
+          <div className="lg:col-span-5 space-y-8">
             <FadeIn delay={0.2}>
-              <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start hover:shadow-md transition-shadow">
-                <div className="bg-blue-50 p-3 rounded-lg mr-4 text-accent">
+              <div className="prose text-slate-600 mb-8">
+                <p>
+                  Our team is dedicated to fostering innovation and entrepreneurship. Use the form to reach the specific department you need.
+                </p>
+              </div>
+
+              {/* Info Card 1: Email */}
+              <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start transition-all hover:shadow-md hover:border-blue-100 group">
+                <div className="bg-blue-50 p-3 rounded-xl mr-4 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-primary text-lg mb-1">Email Us</h4>
-                  <p className="text-secondary text-sm mb-2">For general inquiries.</p>
-                  <a href="mailto:ecell@pccoer.in" className="text-accent font-semibold hover:underline">
+                  <h4 className="font-bold text-slate-900 text-lg mb-1">Email Us</h4>
+                  <p className="text-slate-500 text-sm mb-2">For general inquiries & support</p>
+                  <a href="mailto:ecell@pccoer.in" className="text-blue-600 font-semibold hover:text-blue-800 transition-colors">
                     ecell@pccoer.in
                   </a>
                 </div>
               </div>
-            </FadeIn>
 
-            <FadeIn delay={0.3}>
-              <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start hover:shadow-md transition-shadow">
-                <div className="bg-purple-50 p-3 rounded-lg mr-4 text-purple-600">
+              {/* Info Card 2: Location */}
+              <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start transition-all hover:shadow-md hover:border-purple-100 group">
+                <div className="bg-purple-50 p-3 rounded-xl mr-4 text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors">
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-primary text-lg mb-1">Visit Us</h4>
-                  <p className="text-secondary text-sm">
+                  <h4 className="font-bold text-slate-900 text-lg mb-1">Visit Campus</h4>
+                  <p className="text-slate-500 text-sm leading-relaxed">
                     PCCOER Campus, Ravet,<br/> 
-                    Pune - 412101
+                    Pune, Maharashtra - 412101
                   </p>
                 </div>
               </div>
             </FadeIn>
           </div>
 
-          {/* RIGHT: The Live Form */}
-          <FadeIn delay={0.4}>
-            <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-gray-100 relative">
-              
-              <form onSubmit={onSubmit} className="space-y-6">
+          {/* RIGHT COLUMN: The Secure Form */}
+          <div className="lg:col-span-7">
+            <FadeIn delay={0.4}>
+              <div className="bg-white p-8 md:p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 relative overflow-hidden">
                 
-                {/* Honeypot to prevent spam bots (Hidden) */}
-                <input type="checkbox" name="botcheck" className="hidden" style={{display: 'none'}} />
+                {/* Decorative Top Line */}
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <form onSubmit={onSubmit} className="space-y-6">
+                  
+                  {/* --- SECURITY: Honeypot Field (Hidden) --- */}
+                  {/* This field must remain hidden. Bots will fill it, humans won't. Web3Forms detects this. */}
+                  <input type="checkbox" name="botcheck" className="hidden" style={{display: 'none'}} />
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {/* Name Field */}
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">
+                        Full Name
+                      </label>
+                      <input 
+                        id="name"
+                        type="text" 
+                        name="name" 
+                        required
+                        placeholder="Enter your full name" 
+                        className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all placeholder:text-slate-400"
+                      />
+                    </div>
+
+                    {/* Phone Field (New) */}
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-semibold text-slate-700 mb-2">
+                        Phone Number <span className="text-slate-400 font-normal text-xs ml-1">(Optional)</span>
+                      </label>
+                      <input 
+                        id="phone"
+                        type="tel" 
+                        name="phone" 
+                        placeholder="+91 00000 00000" 
+                        className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all placeholder:text-slate-400"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {/* Email Field */}
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
+                        Email Address
+                      </label>
+                      <input 
+                        id="email"
+                        type="email" 
+                        name="email" 
+                        required
+                        placeholder="name@organization.com" 
+                        className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all placeholder:text-slate-400"
+                      />
+                    </div>
+
+                    {/* Inquiry Type (New) */}
+                    <div>
+                      <label htmlFor="subject" className="block text-sm font-semibold text-slate-700 mb-2">
+                        Inquiry Type
+                      </label>
+                      <div className="relative">
+                        <select 
+                          id="subject"
+                          name="subject" 
+                          required
+                          className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all appearance-none cursor-pointer"
+                        >
+                          <option value="General Inquiry">General Inquiry</option>
+                          <option value="Incubation Support">Incubation Support</option>
+                          <option value="Partnership Proposal">Partnership Proposal</option>
+                          <option value="Event Collaboration">Event Collaboration</option>
+                          <option value="Technical Issue">Technical Issue</option>
+                        </select>
+                        <ChevronDown className="w-5 h-5 text-slate-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Message Field */}
                   <div>
-                    <label className="block text-sm font-bold text-primary mb-2">First Name</label>
-                    <input 
-                      type="text" 
-                      name="First Name" 
+                    <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">
+                      Your Message
+                    </label>
+                    <textarea 
+                      id="message"
+                      name="message" 
                       required
-                      placeholder="First Name" 
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all placeholder:text-gray-400"
-                    />
+                      minLength={10}
+                      rows="5" 
+                      placeholder="Please describe your requirements or query in detail..." 
+                      className="w-full px-4 py-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all resize-none placeholder:text-slate-400"
+                    ></textarea>
+                    <p className="text-right text-xs text-slate-400 mt-1">Minimum 10 characters</p>
                   </div>
-                  <div>
-                    <label className="block text-sm font-bold text-primary mb-2">Last Name</label>
-                    <input 
-                      type="text" 
-                      name="Last Name"
-                      placeholder="Last Name" 
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all placeholder:text-gray-400"
-                    />
-                  </div>
-                </div>
 
-                <div>
-                  <label className="block text-sm font-bold text-primary mb-2">Email Address</label>
-                  <input 
-                    type="email" 
-                    name="email" 
-                    required
-                    placeholder="you@example.com" 
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all placeholder:text-gray-400"
-                  />
-                </div>
+                  {/* Submit Button */}
+                  <button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className={`w-full py-4 rounded-xl font-bold text-lg text-white transition-all flex items-center justify-center shadow-lg hover:shadow-blue-500/25 active:scale-[0.98]
+                      ${isSubmitting ? 'bg-slate-400 cursor-not-allowed' : 'bg-gradient-to-r from-blue-600 to-blue-700 hover:to-blue-600'}
+                    `}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                        Sending Message...
+                      </>
+                    ) : (
+                      <>
+                        Send Message 
+                        <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
+                  </button>
 
-                <div>
-                  <label className="block text-sm font-bold text-primary mb-2">Message</label>
-                  <textarea 
-                    name="message" 
-                    required
-                    rows="4" 
-                    placeholder="Tell us about your query..." 
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all resize-none placeholder:text-gray-400"
-                  ></textarea>
-                </div>
-
-                <button 
-                  type="submit" 
-                  disabled={isSubmitting}
-                  className={`w-full py-4 rounded-xl font-bold text-lg transition-colors flex items-center justify-center shadow-lg transform 
-                    ${isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary text-white hover:bg-accent hover:-translate-y-1 hover:shadow-xl'}
-                  `}
-                >
-                  {isSubmitting ? (
-                    <>Sending... <Loader2 className="w-5 h-5 ml-2 animate-spin" /></>
-                  ) : (
-                    <>Send Message <Send className="w-5 h-5 ml-2" /></>
+                  {/* Status Messages */}
+                  {result === 'success' && (
+                    <div className="flex items-center p-4 bg-green-50 text-green-700 rounded-xl border border-green-200 animate-in fade-in slide-in-from-bottom-2">
+                      <CheckCircle className="w-5 h-5 mr-3 flex-shrink-0" /> 
+                      <p className="text-sm font-medium">Thank you! Your message has been sent successfully.</p>
+                    </div>
                   )}
-                </button>
 
-                {/* Success Message */}
-                {result === 'success' && (
-                  <div className="flex items-center justify-center p-4 mt-4 bg-green-50 text-green-700 rounded-xl border border-green-100 animate-in fade-in slide-in-from-bottom-2">
-                    <CheckCircle className="w-5 h-5 mr-2" /> 
-                    <span className="font-semibold">Message sent! We'll get back to you soon.</span>
-                  </div>
-                )}
+                  {result === 'error' && (
+                    <div className="flex items-center p-4 bg-red-50 text-red-700 rounded-xl border border-red-200 animate-in fade-in slide-in-from-bottom-2">
+                      <AlertCircle className="w-5 h-5 mr-3 flex-shrink-0" /> 
+                      <p className="text-sm font-medium">Something went wrong. Please check your connection and try again.</p>
+                    </div>
+                  )}
 
-                {/* Error Message */}
-                {result === 'error' && (
-                  <div className="flex items-center justify-center p-4 mt-4 bg-red-50 text-red-700 rounded-xl border border-red-100 animate-in fade-in slide-in-from-bottom-2">
-                    <AlertCircle className="w-5 h-5 mr-2" /> 
-                    <span className="font-semibold">Something went wrong. Please try again.</span>
-                  </div>
-                )}
-
-              </form>
-            </div>
-          </FadeIn>
+                </form>
+              </div>
+            </FadeIn>
+          </div>
 
         </div>
       </div>
-      
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10"></div>
+
+      {/* Tailwind Custom Animation (Injecting style for FadeIn if not present in tailwind.config) */}
+      <style>{`
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+          animation: fadeInUp 0.6s ease-out forwards;
+        }
+      `}</style>
     </section>
   );
 };

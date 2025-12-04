@@ -35,7 +35,7 @@ const Team = () => {
     name: "Dr. Vijay Kotkar",
     position: "Patron & Strategic Mentor",
     image: "/E-CELL-WEBSITE/images/team/hod.jpeg",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/dr-vijay-kotkar-58987b20/",
   }
 
   const advisorMembers = [
@@ -43,7 +43,7 @@ const Team = () => {
       name: "Dr.Vaishali Kulloli",
       position: "Faculty Advisor",
       image: "/E-CELL-WEBSITE/images/team/kulloli.jpeg",
-      linkedin: "",
+      linkedin: "https://www.linkedin.com/in/vaishali-kulloli-3b4685326/",
     },
     {
       name: "Bhagyesh Makhmale",
@@ -54,7 +54,7 @@ const Team = () => {
   ]
 
   return (
-    <div className="team-container">
+    <div id="team" className="team-container">
       <div className="team-header">
         <p className="team-header-subtitle">Our Leadership</p>
         <h1 className="team-header-title">Meet Our Leadership</h1>
