@@ -1,5 +1,5 @@
-import React from 'react';
-import { Trophy, ArrowLeft, CheckCircle, Lightbulb, Users, Layers, Calendar, Target, ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { Trophy, ArrowLeft, CheckCircle, Lightbulb, Users, Layers, Calendar, Target, ArrowRight, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -7,6 +7,8 @@ import FadeIn from '../components/FadeIn';
 
 const UdbhavPage = () => {
   const publicUrl = import.meta.env.BASE_URL;
+  // State to manage the currently selected image for the lightbox
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const winners = [
     {
@@ -36,6 +38,20 @@ const UdbhavPage = () => {
   ];
 
   const galleryImages = [1, 2, 3, 4, 5, 6];
+
+  // Function to handle opening the image
+  const openLightbox = (imageSrc) => {
+    setSelectedImage(imageSrc);
+    // Prevent scrolling when modal is open
+    document.body.style.overflow = 'hidden';
+  };
+
+  // Function to close the image
+  const closeLightbox = () => {
+    setSelectedImage(null);
+    // Restore scrolling
+    document.body.style.overflow = 'auto';
+  };
 
   return (
     <div className="bg-white min-h-screen font-sans text-secondary">
@@ -216,24 +232,59 @@ const UdbhavPage = () => {
                 </div>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                     {galleryImages.map((num) => (
-                        <div key={num} className="rounded-2xl overflow-hidden shadow-sm hover:shadow-xl h-64 group relative cursor-pointer border border-gray-100 bg-gray-100">
-                            <img 
-                                src={`${publicUrl}udbhav/${num}.jpg`} 
-                                alt={`Event Moment ${num}`} 
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                            />
-                            <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                                <div className="bg-white p-4 rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                    <ArrowRight className="w-6 h-6 text-primary" />
-                                </div>
-                            </div>
-                        </div>
-                     ))}
+                     {galleryImages.map((num) => {
+                        const imgSrc = `${publicUrl}udbhav/${num}.jpg`;
+                        return (
+                          <div 
+                            key={num} 
+                            onClick={() => openLightbox(imgSrc)}
+                            className="rounded-2xl overflow-hidden shadow-sm hover:shadow-xl h-64 group relative cursor-zoom-in border border-gray-100 bg-gray-100"
+                          >
+                              <img 
+                                  src={imgSrc} 
+                                  alt={`Event Moment ${num}`} 
+                                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                              />
+                              <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                                  <div className="bg-white p-4 rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                      <ArrowRight className="w-6 h-6 text-primary" />
+                                  </div>
+                              </div>
+                          </div>
+                        );
+                     })}
                 </div>
              </FadeIn>
         </div>
       </section>
+
+      {/* LIGHTBOX MODAL */}
+      {selectedImage && (
+        <div 
+            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300"
+            onClick={closeLightbox}
+        >
+            {/* Close Button */}
+            <button 
+                onClick={closeLightbox}
+                className="absolute top-4 right-4 md:top-8 md:right-8 text-white/70 hover:text-white bg-black/50 hover:bg-black/70 rounded-full p-2 transition-all"
+            >
+                <X className="w-8 h-8 md:w-10 md:h-10" />
+            </button>
+
+            {/* Image Container */}
+            <div 
+                className="relative max-w-5xl w-full flex justify-center"
+                onClick={(e) => e.stopPropagation()} // Prevent click from closing when clicking the image itself
+            >
+                <img 
+                    src={selectedImage} 
+                    alt="Full View" 
+                    className="max-h-[85vh] md:max-h-[90vh] w-auto max-w-full rounded-lg shadow-2xl object-contain animate-in fade-in zoom-in duration-300"
+                />
+            </div>
+        </div>
+      )}
 
       <Footer />
     </div>

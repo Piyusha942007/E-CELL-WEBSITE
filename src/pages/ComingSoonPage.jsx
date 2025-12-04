@@ -1,11 +1,48 @@
-import React from 'react';
-import { ArrowLeft, Bell, CalendarClock } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowLeft, Bell, CalendarClock, CheckCircle, Loader2, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import FadeIn from '../components/FadeIn';
 
 const ComingSoonPage = () => {
+  // 1. State for managing input and submission status
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState('idle'); // 'idle', 'loading', 'success', 'error'
+
+  // PASTE YOUR GOOGLE SHEET WEB APP URL HERE
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwLVGKXSeQpu1H5gQZ2rUCqpcO2irTdBBhaFKfYR8WU4xmv2kAfaaLpjmLGZQ2t-JzQXA/exec'; 
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    if(!email) return;
+
+    setStatus('loading');
+
+    // Create form data to send to Google Sheets
+    const formData = new FormData();
+    formData.append('Email', email); // Must match the header name in your Google Sheet exactly
+    formData.append('Date', new Date().toISOString());
+
+    fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          setStatus('success');
+          setEmail(''); // Clear input
+        } else {
+          setStatus('error');
+        }
+      })
+      .catch((error) => {
+        console.error('Error!', error.message);
+        setStatus('error');
+      });
+  };
+
   return (
     <div className="min-h-screen bg-primary relative overflow-hidden flex flex-col">
       <Navbar />
@@ -50,22 +87,60 @@ const ComingSoonPage = () => {
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <div className="max-w-md mx-auto bg-white/5 border border-white/10 p-2 rounded-full flex flex-col sm:flex-row items-center shadow-2xl gap-2 sm:gap-0">
+            {/* EMAIL FORM SECTION */}
+            <form 
+              onSubmit={handleSubmit}
+              className="max-w-md mx-auto bg-white/5 border border-white/10 p-2 rounded-full flex flex-col sm:flex-row items-center shadow-2xl gap-2 sm:gap-0 relative"
+            >
                <div className="hidden sm:flex w-10 h-10 rounded-full bg-accent items-center justify-center text-white flex-shrink-0">
                   <Bell className="w-5 h-5" />
                </div>
+               
                <input 
                   type="email" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email for updates..." 
-                  className="bg-transparent border-none outline-none text-white px-4 flex-grow placeholder-gray-400 w-full text-center sm:text-left py-2 sm:py-0"
+                  required
+                  disabled={status === 'loading' || status === 'success'}
+                  className="bg-transparent border-none outline-none text-white px-4 flex-grow placeholder-gray-400 w-full text-center sm:text-left py-2 sm:py-0 disabled:opacity-50"
                />
-               <button className="w-full sm:w-auto px-6 py-2 bg-white text-primary rounded-full font-bold text-sm hover:bg-gray-100 transition-colors">
-                  Notify Me
+               
+               <button 
+                  type="submit"
+                  disabled={status === 'loading' || status === 'success'}
+                  className={`w-full sm:w-auto px-6 py-2 rounded-full font-bold text-sm transition-all flex items-center justify-center gap-2
+                    ${status === 'success' 
+                      ? 'bg-green-500 text-white cursor-default' 
+                      : 'bg-white text-primary hover:bg-gray-100'
+                    }
+                  `}
+               >
+                  {status === 'loading' && <Loader2 className="w-4 h-4 animate-spin" />}
+                  {status === 'success' && <><CheckCircle className="w-4 h-4" /> Added</>}
+                  {status === 'error' && <><AlertCircle className="w-4 h-4" /> Retry</>}
+                  {status === 'idle' && 'Notify Me'}
                </button>
+            </form>
+
+            {/* Status Messages */}
+            <div className="h-6 mt-4">
+              {status === 'success' && (
+                <p className="text-green-400 text-xs md:text-sm animate-in fade-in slide-in-from-top-1">
+                  You're on the list! We'll email you when registrations open.
+                </p>
+              )}
+              {status === 'error' && (
+                <p className="text-red-400 text-xs md:text-sm animate-in fade-in slide-in-from-top-1">
+                  Something went wrong. Please try again.
+                </p>
+              )}
+              {status === 'idle' && (
+                <p className="text-blue-200/60 text-xs md:text-sm">
+                  We promise not to spam. You'll only get one email when registrations open.
+                </p>
+              )}
             </div>
-            <p className="text-blue-200/60 text-xs md:text-sm mt-4">
-              We promise not to spam. You'll only get one email when registrations open.
-            </p>
           </FadeIn>
 
         </div>

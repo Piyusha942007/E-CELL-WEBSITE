@@ -118,7 +118,7 @@ const Inauguration = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs p-2 translate-y-full group-hover:translate-y-0 transition-transform">
-                      50+ Students Participated
+                      5 Students Led Startups Presented
                    </div>
                 </div>
               </div>

@@ -2,19 +2,20 @@
 .team-grid-hod {
   display: flex;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px; /* Reduced margin */
 }
 
+/* Made the HOD card smaller */
 .team-grid-hod .team-card {
   width: 100%;
-  max-width: 320px;
+  max-width: 240px; /* Reduced from 320px */
 }
 
 .team-grid-advisors {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-  max-width: 700px;
+  gap: 24px; /* Reduced gap */
+  max-width: 500px; /* Reduced max-width to keep them close */
   margin: 0 auto;
 }
 
@@ -26,19 +27,20 @@
 @media (max-width: 768px) {
   .team-grid-advisors {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
   }
 }
 
 .team-card {
   background-color: #ffffff;
-  border-radius: 12px;
+  border-radius: 10px; /* Slightly smaller radius */
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(10, 37, 64, 0.08);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
+  /* Optional: explicit max-height if you want to force smallness */
 }
 
 .team-card:hover {
@@ -48,7 +50,10 @@
 
 .team-card-image {
   width: 100%;
-  height: 280px;            /* was 240 – give more room */
+  /* Reduced height significantly for smaller cards */
+  aspect-ratio: 3/4;
+  /* Reduced min-height to match the smaller card width */
+  min-height: 200px; /* Reduced from 280px */
   overflow: hidden;
   background-color: #f6f9fc;
   display: flex;
@@ -59,29 +64,28 @@
 .team-card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;        /* nice card fill */
-  object-position: center top;  /* keep faces in frame */
-  transform: none;          /* ❌ remove extra zoom */
+  object-fit: cover;
+  object-position: top center;
+  transform: none;
   transition: transform 0.3s ease;
 }
 
 .team-card:hover .team-card-image img {
-  transform: scale(1.04);   /* very slight hover zoom only */
+  transform: scale(1.04);
 }
 
-
-
-
 .team-card-content {
-  padding: 24px 20px;
+  padding: 16px 12px; /* Reduced padding */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center; /* FIX: Center align everything */
+  text-align: center; /* FIX: Center text */
   flex: 1;
 }
 
 .team-card-name {
-  font-size: 1.125rem;
+  font-size: 1rem; /* Reduced font size */
   font-weight: 700;
   color: #0a2540;
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -89,7 +93,7 @@
 }
 
 .team-card-position {
-  font-size: 0.875rem;
+  font-size: 0.75rem; /* Reduced font size */
   color: #425466;
   font-weight: 500;
   line-height: 1.4;
@@ -98,17 +102,17 @@
 .team-card-social {
   display: flex;
   gap: 12px;
-  margin-top: 16px;
-  justify-content: flex-start;
+  margin-top: 12px; /* Reduced margin */
+  justify-content: center; /* Kept centered */
 }
 
 .social-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
+  width: 32px; /* Reduced icon size */
+  height: 32px; /* Reduced icon size */
+  border-radius: 6px;
   transition: all 0.3s ease;
   color: #ffffff;
   text-decoration: none;
@@ -125,15 +129,15 @@
 }
 
 .social-icon svg {
-  width: 20px;
-  height: 20px;
+  width: 16px; /* Reduced svg size */
+  height: 16px; /* Reduced svg size */
 }
 
 /* Original header and container styles */
 .team-container {
   min-height: 100vh;
   background-color: #f6f9fc;
-  padding: 80px 40px;
+  padding: 60px 20px; /* Reduced padding */
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   position: relative;
   z-index: 1;
@@ -141,20 +145,20 @@
 
 .team-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px; /* Reduced margin */
 }
 
 .team-header-subtitle {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #635bff;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .team-header-title {
-  font-size: 3rem;
+  font-size: 2.5rem; /* Reduced title size */
   font-weight: 700;
   color: #0a2540;
   letter-spacing: -0.5px;
@@ -162,42 +166,51 @@
 }
 
 .team-section {
-  margin-bottom: 60px;
+  margin-bottom: 40px; /* Reduced margin */
 }
 
 .section-title {
-  font-size: 1.75rem;
+  font-size: 1.5rem; /* Reduced size */
   font-weight: 700;
   color: #0a2540;
-  margin-bottom: 36px;
+  margin-bottom: 24px;
   font-family: "Plus Jakarta Sans", sans-serif;
   letter-spacing: -0.5px;
+  text-align: center; /* Optional: Looks better centered with small cards */
 }
 
 .team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  max-width: 1200px;
+  /* CHANGED: Switched to Flexbox to prevent awkward spacing on rows with few items */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px; /* Reduced gap */
+  max-width: 1000px; /* Reduced max-width */
   margin: 0 auto;
+}
+
+/* Specific adjustment so standard grids don't get too wide cards */
+.team-grid .team-card {
+  width: 220px; /* Force fixed small width */
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 .view-more-container {
   display: flex;
   justify-content: center;
-  margin-top: 60px;
-  margin-bottom: 40px;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .view-more-button {
   display: inline-block;
-  padding: 12px 32px;
+  padding: 10px 24px; /* Smaller button */
   background-color: #635bff;
   color: #ffffff;
   text-decoration: none;
   border: none;
-  border-radius: 8px;
-  font-size: 0.95rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
   font-weight: 600;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -218,17 +231,17 @@
 .back-button-container {
   display: flex;
   justify-content: center;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .back-button {
   display: inline-block;
-  padding: 12px 32px;
+  padding: 10px 24px;
   background-color: transparent;
   color: #635bff;
   border: 2px solid #635bff;
-  border-radius: 8px;
-  font-size: 0.95rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
   font-weight: 600;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -244,48 +257,38 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .team-container {
-    padding: 60px 24px;
+    padding: 40px 16px;
   }
 
   .team-header-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .section-title {
     font-size: 1.25rem;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
   .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 16px;
   }
 
-  .team-grid-advisors {
-    grid-template-columns: 1fr;
-    gap: 24px;
+  /* Ensure cards don't get huge on mobile */
+  .team-grid .team-card, 
+  .team-grid-hod .team-card,
+  .team-grid-advisors .team-card {
+    max-width: 180px; 
+    width: 100%;
   }
-
+  
   .team-card-image {
-    height: 200px;
-  }
-
-  .team-card-content {
-    padding: 16px;
-  }
-
-  .team-card-name {
-    font-size: 1rem;
-  }
-
-  .team-card-position {
-    font-size: 0.8125rem;
+    min-height: 160px;
   }
 }
 
 @media (max-width: 480px) {
   .team-container {
-    padding: 40px 16px;
+    padding: 30px 12px;
   }
 
   .team-header-title {
@@ -293,26 +296,38 @@
   }
 
   .section-title {
-    font-size: 1.125rem;
+    font-size: 1.1rem;
   }
 
+  /* Adjust spacing on very small screens */
   .team-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
   }
-
+  
   .team-grid-advisors {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
   .team-card-image {
-    height: 180px;
+    min-height: 140px;
+  }
+  
+  .team-card-content {
+    padding: 12px 8px;
+  }
+
+  .team-card-name {
+    font-size: 0.9rem;
+  }
+  
+  .team-card-position {
+    font-size: 0.7rem;
   }
 
   .view-more-button,
   .back-button {
-    padding: 10px 24px;
-    font-size: 0.875rem;
+    padding: 8px 20px;
+    font-size: 0.85rem;
   }
 }

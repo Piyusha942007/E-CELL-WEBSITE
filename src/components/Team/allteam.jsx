@@ -110,7 +110,7 @@ const AllTeam = () => {
       {
         name: "Samiksha Ner",
         position: "Joint Head of Technical Operations",
-        image: "/E-CELL-WEBSITE/images/team/samikshaaa.jpeg",
+        image: "/E-CELL-WEBSITE/images/team/Samiksha.png",
         linkedin: "https://www.linkedin.com/in/samikshaner/",
       },
     ],
@@ -180,20 +180,6 @@ const AllTeam = () => {
         linkedin: "https://www.linkedin.com/in/manthan-patil-738812377/",
       },
     ],
-    facultyAdvisors: [
-      {
-        name: "Dr.Vaishali Kulloli",
-        position: "Faculty Advisor",
-        image: "/E-CELL-WEBSITE/images/team/kulloli.jpeg",
-        linkedin: "",
-      },
-      {
-        name: "Dr.Vijay Kotkar",
-        position: "Patron & Strategic Mentor",
-        image: "/E-CELL-WEBSITE/images/team/hod.jpeg",
-        linkedin: "",
-      },
-    ],
   }
 
   const TeamSection = ({ title, members }) => (
@@ -220,7 +206,6 @@ const AllTeam = () => {
       <TeamSection title="Social Media Team" members={teamData.socialMediaTeam} />
       <TeamSection title="Marketing Team" members={teamData.marketingTeam} />
       <TeamSection title="Design Team" members={teamData.designTeam} />
-      <TeamSection title="Faculty Advisors" members={teamData.facultyAdvisors} />
 
       <div className="back-button-container">
         <button onClick={() => navigate("/team")} className="back-button">

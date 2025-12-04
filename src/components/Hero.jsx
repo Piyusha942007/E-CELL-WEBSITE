@@ -21,18 +21,7 @@ const Hero = () => {
       {/* 2. MAIN CONTENT */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 md:pt-20">
         
-        {/* Floating Badge */}
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.6 }}
-          className="flex justify-center mb-6 md:mb-8"
-        >
-          <div className="inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-blue-200 text-[10px] md:text-xs font-bold tracking-widest uppercase shadow-2xl">
-            <span className="flex h-2 w-2 rounded-full bg-accent mr-2 md:mr-3 animate-pulse"></span>
-            Admissions Open for Cohort '25
-          </div>
-        </motion.div>
+        
 
         {/* Headline - Responsive Text Sizes */}
         <motion.h1 
