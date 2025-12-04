@@ -50,7 +50,7 @@ const AllTeam = () => {
     {
       name: "Kadambari Khedekar",
       position: "Deputy Chair",
-      image: "/E-CELL-WEBSITE/images/team/.jpg", 
+      image: "/E-CELL-WEBSITE/images/team/Kadambari.jpg", 
       linkedin: "https://www.linkedin.com/in/kadambari-arvind-khedekar-203100327/",
     },
   ]
@@ -88,7 +88,7 @@ const AllTeam = () => {
     {
       name: "Disha Marne",
       position: "Joint Head of Finance and Resources",
-      image: "/E-CELL-WEBSITE/images/team/.jpg", 
+      image: "/E-CELL-WEBSITE/images/team/Disha.png", 
       linkedin: "https://www.linkedin.com/in/disha-marne-64a74a292/",
     },
   ]
@@ -186,7 +186,7 @@ const AllTeam = () => {
     {
       name: "Aditya Kute",
       position: "Marketing Member",
-      image: "/E-CELL-WEBSITE/images/team/.jpg", 
+      image: "/E-CELL-WEBSITE/images/team/Adityakute.jpg", 
       linkedin: "https://www.linkedin.com/in/aditya-kute-732bb8328/",
     },
     {

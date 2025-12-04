@@ -122,20 +122,22 @@ const Inauguration = () => {
                    </div>
                 </div>
               </div>
+<div className="space-y-4 pt-8">
+  {/* Image 3: Team Photo */}
+  {/* Removed h-64 and added aspect-[4407/2682] to fit the image dimensions */}
+  <div className="rounded-xl shadow-lg w-full aspect-[4407/2682] overflow-hidden bg-black relative group">
+    {/* FIX: Use publicUrl */}
+    <img
+      src={`${publicUrl}inauguration/team.JPG`}
+      alt="Team 2025"
+      /* Changed object-contain to object-cover so it fills the aspect ratio box */
+      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+    />
+    <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs p-2 translate-y-full group-hover:translate-y-0 transition-transform">
+      Core Team & Faculty
+    </div>
+  </div>
 
-              <div className="space-y-4 pt-8">
-                {/* Image 3: Team Photo */}
-                 <div className="rounded-xl shadow-lg w-full h-64 overflow-hidden bg-black relative group">
-                  {/* FIX: Use publicUrl */}
-                  <img 
-                    src={`${publicUrl}inauguration/team.JPG`} 
-                    alt="Team 2025" 
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-                  />
-                   <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs p-2 translate-y-full group-hover:translate-y-0 transition-transform">
-                      Core Team & Faculty
-                   </div>
-                </div>
 
                 {/* Stats Block */}
                 <div className="bg-primary rounded-xl shadow-lg w-full h-48 flex flex-col items-center justify-center p-4 text-center border border-white/10">
