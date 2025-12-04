@@ -2,20 +2,20 @@
 .team-grid-hod {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px; /* Reduced margin */
+  margin-bottom: 30px;
 }
 
 /* Made the HOD card smaller */
 .team-grid-hod .team-card {
   width: 100%;
-  max-width: 240px; /* Reduced from 320px */
+  max-width: 240px;
 }
 
 .team-grid-advisors {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px; /* Reduced gap */
-  max-width: 500px; /* Reduced max-width to keep them close */
+  gap: 24px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
@@ -33,14 +33,13 @@
 
 .team-card {
   background-color: #ffffff;
-  border-radius: 10px; /* Slightly smaller radius */
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(10, 37, 64, 0.08);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
-  /* Optional: explicit max-height if you want to force smallness */
 }
 
 .team-card:hover {
@@ -50,10 +49,8 @@
 
 .team-card-image {
   width: 100%;
-  /* Reduced height significantly for smaller cards */
   aspect-ratio: 3/4;
-  /* Reduced min-height to match the smaller card width */
-  min-height: 200px; /* Reduced from 280px */
+  min-height: 200px;
   overflow: hidden;
   background-color: #f6f9fc;
   display: flex;
@@ -75,17 +72,17 @@
 }
 
 .team-card-content {
-  padding: 16px 12px; /* Reduced padding */
+  padding: 16px 12px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center; /* FIX: Center align everything */
-  text-align: center; /* FIX: Center text */
+  align-items: center;
+  text-align: center;
   flex: 1;
 }
 
 .team-card-name {
-  font-size: 1rem; /* Reduced font size */
+  font-size: 1rem;
   font-weight: 700;
   color: #0a2540;
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -93,7 +90,7 @@
 }
 
 .team-card-position {
-  font-size: 0.75rem; /* Reduced font size */
+  font-size: 0.75rem;
   color: #425466;
   font-weight: 500;
   line-height: 1.4;
@@ -102,16 +99,16 @@
 .team-card-social {
   display: flex;
   gap: 12px;
-  margin-top: 12px; /* Reduced margin */
-  justify-content: center; /* Kept centered */
+  margin-top: 12px;
+  justify-content: center;
 }
 
 .social-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px; /* Reduced icon size */
-  height: 32px; /* Reduced icon size */
+  width: 32px;
+  height: 32px;
   border-radius: 6px;
   transition: all 0.3s ease;
   color: #ffffff;
@@ -129,15 +126,15 @@
 }
 
 .social-icon svg {
-  width: 16px; /* Reduced svg size */
-  height: 16px; /* Reduced svg size */
+  width: 16px;
+  height: 16px;
 }
 
 /* Original header and container styles */
 .team-container {
   min-height: 100vh;
   background-color: #f6f9fc;
-  padding: 60px 20px; /* Reduced padding */
+  padding: 60px 20px;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   position: relative;
   z-index: 1;
@@ -145,7 +142,7 @@
 
 .team-header {
   text-align: center;
-  margin-bottom: 40px; /* Reduced margin */
+  margin-bottom: 40px;
 }
 
 .team-header-subtitle {
@@ -158,7 +155,7 @@
 }
 
 .team-header-title {
-  font-size: 2.5rem; /* Reduced title size */
+  font-size: 2.5rem;
   font-weight: 700;
   color: #0a2540;
   letter-spacing: -0.5px;
@@ -166,33 +163,31 @@
 }
 
 .team-section {
-  margin-bottom: 40px; /* Reduced margin */
+  margin-bottom: 40px;
 }
 
 .section-title {
-  font-size: 1.5rem; /* Reduced size */
+  font-size: 1.5rem;
   font-weight: 700;
   color: #0a2540;
   margin-bottom: 24px;
   font-family: "Plus Jakarta Sans", sans-serif;
   letter-spacing: -0.5px;
-  text-align: center; /* Optional: Looks better centered with small cards */
+  text-align: center;
 }
 
 .team-grid {
-  /* CHANGED: Switched to Flexbox to prevent awkward spacing on rows with few items */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 24px; /* Reduced gap */
-  max-width: 1000px; /* Reduced max-width */
+  gap: 24px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-/* Specific adjustment so standard grids don't get too wide cards */
 .team-grid .team-card {
-  width: 220px; /* Force fixed small width */
-  flex-shrink: 0; /* Prevent shrinking */
+  width: 220px;
+  flex-shrink: 0;
 }
 
 .view-more-container {
@@ -204,7 +199,7 @@
 
 .view-more-button {
   display: inline-block;
-  padding: 10px 24px; /* Smaller button */
+  padding: 10px 24px;
   background-color: #635bff;
   color: #ffffff;
   text-decoration: none;
@@ -254,80 +249,105 @@
   transform: translateY(-2px);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* --- HIERARCHY LAYOUT STYLES --- */
+
+.hierarchy-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.hierarchy-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Desktop default: Side-by-side cards */
+.hierarchy-row .team-card {
+  width: 220px;         
+  flex-shrink: 0;       
+  max-width: 100%;
+}
+
+/* --- FINANCE ROW (Strict Side-by-Side on Mobile) --- */
+.finance-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.finance-row .team-card {
+  width: 220px;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE OVERRIDES (Max 600px) 
+   ========================================= */
+@media (max-width: 600px) {
   .team-container {
-    padding: 40px 16px;
+    padding: 30px 12px;
   }
 
   .team-header-title {
     font-size: 1.8rem;
   }
 
-  .section-title {
-    font-size: 1.25rem;
-    margin-bottom: 20px;
+  /* 1. REGULAR HIERARCHY: Stack Vertically (One per line) */
+  .hierarchy-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
   }
 
-  .team-grid {
-    gap: 16px;
+  .hierarchy-row .team-card {
+    width: 100%;        /* Full width */
+    max-width: 280px;   /* Limit width so they don't look too big */
   }
 
-  /* Ensure cards don't get huge on mobile */
-  .team-grid .team-card, 
-  .team-grid-hod .team-card,
-  .team-grid-advisors .team-card {
-    max-width: 180px; 
+  /* 2. FINANCE ROW: Strict Side-by-Side (Two per line) */
+  .finance-row {
+    flex-direction: row;          /* Force row direction */
+    flex-wrap: nowrap !important; /* Force single line */
+    gap: 10px !important;
     width: 100%;
+    padding: 0 5px;
+    box-sizing: border-box;
+  }
+
+  .finance-row .team-card {
+    width: 50% !important;
+    max-width: none;              /* Override any max-width */
+    min-width: 0 !important;
+    flex-shrink: 1 !important;
+  }
+
+  /* Finance Row Specific: Shrink image to fit layout */
+  .finance-row .team-card-image {
+    min-height: 120px !important;
+    max-height: 140px;
+  }
+
+  /* Finance Row Specific: Smaller Text */
+  .finance-row .team-card-name {
+    font-size: 0.85rem !important;
+    margin-bottom: 2px;
+  }
+
+  .finance-row .team-card-position {
+    font-size: 0.65rem !important;
+    line-height: 1.1;
   }
   
-  .team-card-image {
-    min-height: 160px;
-  }
-}
-
-@media (max-width: 480px) {
-  .team-container {
-    padding: 30px 12px;
-  }
-
-  .team-header-title {
-    font-size: 1.5rem;
-  }
-
-  .section-title {
-    font-size: 1.1rem;
-  }
-
-  /* Adjust spacing on very small screens */
-  .team-grid {
-    gap: 12px;
-  }
-  
-  .team-grid-advisors {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  .team-card-image {
-    min-height: 140px;
-  }
-  
-  .team-card-content {
-    padding: 12px 8px;
-  }
-
-  .team-card-name {
-    font-size: 0.9rem;
-  }
-  
-  .team-card-position {
-    font-size: 0.7rem;
-  }
-
-  .view-more-button,
-  .back-button {
-    padding: 8px 20px;
-    font-size: 0.85rem;
+  .finance-row .team-card-content {
+    padding: 10px 4px !important;
   }
 }
