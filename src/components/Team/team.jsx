@@ -42,7 +42,7 @@ const Team = () => {
     {
       name: "Dr.Vaishali Kulloli",
       position: "Faculty Advisor",
-      image: "/E-CELL-WEBSITE/images/team/vaishali.jpg",
+      image: "/E-CELL-WEBSITE/images/team/vaishali.png",
       linkedin: "https://www.linkedin.com/in/dr-vaishali-kulloli-3b4685326/",
     },
     {
