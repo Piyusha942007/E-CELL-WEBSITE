@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, PlayCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -21,9 +22,7 @@ const Hero = () => {
       {/* 2. MAIN CONTENT */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 md:pt-20">
         
-        
-
-        {/* Headline - Responsive Text Sizes */}
+        {/* Headline */}
         <motion.h1 
           initial={{ opacity: 0, y: 20 }} 
           animate={{ opacity: 1, y: 0 }} 
@@ -46,21 +45,29 @@ const Hero = () => {
           PCCOER E-Cell bridges the gap between <span className="text-white font-medium">raw ideas</span> and <span className="text-white font-medium">market reality</span> through expert mentorship and seed funding.
         </motion.p>
 
-        {/* Action Buttons - Stack on mobile */}
+        {/* Action Buttons */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }} 
           animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <a href="#initiatives" className="w-full sm:w-auto group relative inline-flex justify-center items-center px-8 py-3.5 bg-accent text-white rounded-full font-bold text-base md:text-lg overflow-hidden transition-all hover:scale-105 shadow-[0_0_40px_-10px_rgba(99,102,241,0.5)]">
+          {/* Scroll to Initiatives Section */}
+          <a 
+            href="#initiatives"
+            className="w-full sm:w-auto group relative inline-flex justify-center items-center px-8 py-3.5 bg-accent text-white rounded-full font-bold text-base md:text-lg overflow-hidden transition-all hover:scale-105 shadow-[0_0_40px_-10px_rgba(99,102,241,0.5)] cursor-pointer"
+          >
             <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shine"></div>
             Explore Initiatives <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </a>
           
-          <a href="#about" className="w-full sm:w-auto inline-flex justify-center items-center px-8 py-3.5 border border-white/20 bg-white/5 backdrop-blur-sm text-white rounded-full font-bold text-base md:text-lg hover:bg-white/10 hover:border-white/40 transition-all">
+          {/* Link to Mission Section on Mission Page */}
+          <Link 
+            to="/mission#mission"
+            className="w-full sm:w-auto inline-flex justify-center items-center px-8 py-3.5 border border-white/20 bg-white/5 backdrop-blur-sm text-white rounded-full font-bold text-base md:text-lg hover:bg-white/10 hover:border-white/40 transition-all"
+          >
             <PlayCircle className="mr-2 h-5 w-5" /> Our Mission
-          </a>
+          </Link>
         </motion.div>
 
       </div>

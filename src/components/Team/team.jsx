@@ -34,7 +34,7 @@ const Team = () => {
   const hodMember = {
     name: "Dr. Vijay Kotkar",
     position: "Patron & Strategic Mentor",
-    image: "/E-CELL-WEBSITE/images/team/hod.jpeg",
+    image: "/E-CELL-WEBSITE/images/team/hod.png",
     linkedin: "https://www.linkedin.com/in/dr-vijay-kotkar-58987b20/",
   }
 
@@ -43,7 +43,7 @@ const Team = () => {
       name: "Dr.Vaishali Kulloli",
       position: "Faculty Advisor",
       image: "/E-CELL-WEBSITE/images/team/vaishali.png",
-      linkedin: "https://www.linkedin.com/in/vaishali-kulloli-3b4685326/",
+      linkedin: "https://www.linkedin.com/in/dr-vaishali-kulloli-3b4685326/",
     },
     {
       name: "Bhagyesh Makhmale",
@@ -57,7 +57,7 @@ const Team = () => {
     <div id="team" className="team-container">
       <div className="team-header">
         <p className="team-header-subtitle">Our Leadership</p>
-        <h1 className="team-header-title">Meet Our Leadership</h1>
+        <h1 className="team-header-title">Meet Our Leaders</h1>
       </div>
 
       <section className="team-section">
