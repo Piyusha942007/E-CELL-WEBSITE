@@ -158,7 +158,7 @@ const AllTeam = () => {
     {
       name: "Utkarsh Kashid",
       position: "Head of Design and Visual Communications ",
-      image: "/placeholder.svg",
+      image: "/E-CELL-WEBSITE/images/team/Utkarsh.jpg",
       linkedin: "https://www.linkedin.com/in/utkarsh-kashid-44843132b/",
     },
     {
