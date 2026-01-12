@@ -64,6 +64,4 @@ function App() {
   );
 }
 
-export default function App() {
-  return <h1 style={{ color: 'red' }}>APP IS RENDERING</h1>
-}
+export default App;

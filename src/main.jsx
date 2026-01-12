@@ -7,7 +7,7 @@ import ScrollToTop from './components/ScrollToTop' // Import it
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/E-CELL-WEBSITE">
+    <BrowserRouter >
       <ScrollToTop /> 
       <App />
     </BrowserRouter>
