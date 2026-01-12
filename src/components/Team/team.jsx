@@ -34,7 +34,7 @@ const Team = () => {
   const hodMember = {
     name: "Dr. Vijay Kotkar",
     position: "Patron & Strategic Mentor",
-    image: "/E-CELL-WEBSITE/images/team/hod.png",
+    image: "/images/team/hod.png",
     linkedin: "https://www.linkedin.com/in/dr-vijay-kotkar-58987b20/",
   }
 
@@ -42,13 +42,13 @@ const Team = () => {
     {
       name: "Dr.Vaishali Kulloli",
       position: "Faculty Advisor",
-      image: "/E-CELL-WEBSITE/images/team/vaishali.png",
+      image: "/images/team/vaishali.png",
       linkedin: "https://www.linkedin.com/in/dr-vaishali-kulloli-3b4685326/",
     },
     {
       name: "Bhagyesh Makhmale",
       position: "Student Advisor",
-      image: "/E-CELL-WEBSITE/images/team/Bhagyesh.png",
+      image: "/images/team/Bhagyesh.png",
       linkedin: "https://www.linkedin.com/in/bhagyesh-makhamale/",
     },
   ]

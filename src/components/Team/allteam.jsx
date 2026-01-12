@@ -38,19 +38,19 @@ const AllTeam = () => {
     {
       name: "Aditya Divate",
       position: "Head of Operations",
-      image: "/E-CELL-WEBSITE/images/team/adityaa.jpeg",
+      image: "/images/team/adityaa.jpeg",
       linkedin: "https://www.linkedin.com/in/aditya-divate-4b7b5726b/",
     },
     {
       name: "Advait Kulkarni",
       position: "Chair, ECELL",
-      image: "/E-CELL-WEBSITE/images/team/Advait.jpg",
+      image: "/images/team/Advait.jpg",
       linkedin: "https://www.linkedin.com/in/advait-kulkarni-k168/",
     },
     {
       name: "Kadambari Khedekar",
       position: "Deputy Chair",
-      image: "/E-CELL-WEBSITE/images/team/Kadambari.jpg", 
+      image: "/images/team/Kadambari.jpg", 
       linkedin: "https://www.linkedin.com/in/kadambari-arvind-khedekar-203100327/",
     },
   ]
@@ -60,19 +60,19 @@ const AllTeam = () => {
     {
       name: "Himanshee Jaiswal",
       position: "Chair, External Affairs",
-      image: "/E-CELL-WEBSITE/images/team/Himanshee.jpg",
+      image: "/images/team/Himanshee.jpg",
       linkedin: "https://www.linkedin.com/in/himansheejaiswal/",
     },
     {
       name: "Shreyas Kadav",
       position: "Chair, Internal Affairs",
-      image: "/E-CELL-WEBSITE/images/team/Shreyas.png",
+      image: "/images/team/Shreyas.png",
       linkedin: "https://www.linkedin.com/in/shreyas-kadav-67b213323/",
     },
     {
       name: "Siddhesh Kirve",
       position: "Secretary",
-      image: "/E-CELL-WEBSITE/images/team/Siddhesh.jpg",
+      image: "/images/team/Siddhesh.jpg",
       linkedin: "https://www.linkedin.com/in/siddhesh-kirve-2aa2ba329/",
     },
   ]
@@ -82,13 +82,13 @@ const AllTeam = () => {
     {
       name: "Krish Sarode",
       position: "Head of Finance",
-      image: "/E-CELL-WEBSITE/images/team/Krish.jpg",
+      image: "/images/team/Krish.jpg",
       linkedin: "https://www.linkedin.com/in/krish-sarode-68b53332b/",
     },
     {
       name: "Disha Marne",
       position: "Joint Head of Finance and Resources",
-      image: "/E-CELL-WEBSITE/images/team/Disha.png", 
+      image: "/images/team/Disha.png", 
       linkedin: "https://www.linkedin.com/in/disha-marne-64a74a292/",
     },
   ]
@@ -98,19 +98,19 @@ const AllTeam = () => {
     {
       name: "Akash Patil",
       position: "Joint Head of Execution and Personal Relations",
-      image: "/E-CELL-WEBSITE/images/team/akashh.jpeg",
+      image: "/images/team/akashh.jpeg",
       linkedin: "https://www.linkedin.com/in/akash-patil-b1119a32a/",
     },
     {
       name: "Ketaki Shivange",
       position: "Execution and Personal Relations Member",
-      image: "/E-CELL-WEBSITE/images/team/Ketaki.jpg",
+      image: "/images/team/Ketaki.jpg",
       linkedin: "https://www.linkedin.com/in/ketaki-shivange-18005932b/",
     },
     {
       name: "Ritika Kolte",
       position: "Execution and Personal Relations Member",
-      image: "/E-CELL-WEBSITE/images/team/Ritika.jpg",
+      image: "/images/team/Ritika.jpg",
       linkedin: "https://www.linkedin.com/in/kolte-ritika-889832312/",
     },
   ]
@@ -120,13 +120,13 @@ const AllTeam = () => {
     {
       name: "Piyusha Amrutkar",
       position: "Head of Technical Operations",
-      image: "/E-CELL-WEBSITE/images/team/Piyusha.jpg",
+      image: "/images/team/Piyusha.jpg",
       linkedin: "https://www.linkedin.com/in/piyusha-amrutkar-901918328/",
     },
     {
       name: "Samiksha Ner",
       position: "Joint Head of Technical Operations",
-      image: "/E-CELL-WEBSITE/images/team/Samiksha.png",
+      image: "/images/team/Samiksha.png",
       linkedin: "https://www.linkedin.com/in/samikshaner/",
     },
   ]
@@ -136,19 +136,19 @@ const AllTeam = () => {
     {
       name: "Anushka Agam",
       position: "Head and content strategist for online presence, branding and social media ",
-      image: "/E-CELL-WEBSITE/images/team/ANUSHKA.jpg",
+      image: "/images/team/ANUSHKA.jpg",
       linkedin: "https://www.linkedin.com/in/anushka-agam-1b552632b/",
     },
     {
       name: "Aryan Digambare",
       position: "Joint Head for online presence, branding and social media ",
-      image: "/E-CELL-WEBSITE/images/team/Aryan.jpg",
+      image: "/images/team/Aryan.jpg",
       linkedin: "https://www.linkedin.com/in/aryan-digambare-76105732b/",
     },
     {
       name: "Mrunmayee Khot",
       position: "Social Media Member",
-      image: "/E-CELL-WEBSITE/images/team/Mrunmayee.jpg",
+      image: "/images/team/Mrunmayee.jpg",
       linkedin: "https://www.linkedin.com/in/mrunmayee-khot-14a06132b/",
     },
   ]
@@ -158,19 +158,19 @@ const AllTeam = () => {
     {
       name: "Utkarsh Kashid",
       position: "Head of Design and Visual Communications ",
-      image: "/E-CELL-WEBSITE/images/team/Utkarsh.jpg",
+      image: "/images/team/Utkarsh.jpg",
       linkedin: "https://www.linkedin.com/in/utkarsh-kashid-44843132b/",
     },
     {
       name: "Aditya Kashid",
       position: "Joint Head of Design and Visual Communications",
-      image: "/E-CELL-WEBSITE/images/team/Adityaka.jpg",
+      image: "/images/team/Adityaka.jpg",
       linkedin: "https://www.linkedin.com/in/adityakashid746/",
     },
     {
       name: "Manthan Patil",
       position: "Design and Visual Communications Member",
-      image: "/E-CELL-WEBSITE/images/team/Manthan.jpg",
+      image: "/images/team/Manthan.jpg",
       linkedin: "https://www.linkedin.com/in/manthan-patil-738812377/",
     },
   ]
@@ -180,19 +180,19 @@ const AllTeam = () => {
     {
       name: "Esha Pansare",
       position: "Head of Marketing",
-      image: "/E-CELL-WEBSITE/images/team/Esha.png",
+      image: "/images/team/Esha.png",
       linkedin: "https://www.linkedin.com/in/esha-pansare-6106ab290/",
     },
     {
       name: "Aditya Kute",
       position: "Marketing Member",
-      image: "/E-CELL-WEBSITE/images/team/Adityakute.jpg", 
+      image: "/images/team/Adityakute.jpg", 
       linkedin: "https://www.linkedin.com/in/aditya-kute-732bb8328/",
     },
     {
       name: "Shridhar Kulkarni",
       position: "Marketing Member",
-      image: "/E-CELL-WEBSITE/images/team/Shridhar.jpg",
+      image: "/images/team/Shridhar.jpg",
       linkedin: "https://www.linkedin.com/in/shridhar-kulkarni-374b93200/",
     },
   ]
