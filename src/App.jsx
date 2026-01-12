@@ -17,6 +17,7 @@ import SocialSidebar from './components/SocialSidebar';
 import Contact from './components/Contact';
 
 
+
 const Home = () => {
   return (
     <>
@@ -63,4 +64,6 @@ function App() {
   );
 }
 
-export default App;
+export default function App() {
+  return <h1 style={{ color: 'red' }}>APP IS RENDERING</h1>
+}
