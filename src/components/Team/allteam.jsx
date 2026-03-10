@@ -48,21 +48,15 @@ const AllTeam = () => {
       linkedin: "https://www.linkedin.com/in/advait-kulkarni-k168/",
     },
     {
-      name: "Kadambari Khedekar",
+      name: "Himanshee Jaiswal",
       position: "Deputy Chair",
-      image: "/images/team/Kadambari.jpg", 
-      linkedin: "https://www.linkedin.com/in/kadambari-arvind-khedekar-203100327/",
+      image: "/images/team/Himanshee.jpg", 
+      linkedin: "https://www.linkedin.com/in/himansheejaiswal/",
     },
   ]
 
   // 2. Admin Core
   const adminCore = [
-    {
-      name: "Himanshee Jaiswal",
-      position: "Chair, External Affairs",
-      image: "/images/team/Himanshee.jpg",
-      linkedin: "https://www.linkedin.com/in/himansheejaiswal/",
-    },
     {
       name: "Shreyas Kadav",
       position: "Chair, Internal Affairs",
@@ -95,6 +89,12 @@ const AllTeam = () => {
 
   // 4. Execution Team
   const executionTeam = [
+     {
+      name: "Ritika Kolte",
+      position: "Head of Execution and Personal Relations Member",
+      image: "/images/team/Ritika.jpg",
+      linkedin: "https://www.linkedin.com/in/ritika-kolte-4683993b2/",
+    },
     {
       name: "Akash Patil",
       position: "Joint Head of Execution and Personal Relations",
@@ -107,12 +107,7 @@ const AllTeam = () => {
       image: "/images/team/Ketaki.jpg",
       linkedin: "https://www.linkedin.com/in/ketaki-shivange-18005932b/",
     },
-    {
-      name: "Ritika Kolte",
-      position: "Execution and Personal Relations Member",
-      image: "/images/team/Ritika.jpg",
-      linkedin: "https://www.linkedin.com/in/kolte-ritika-889832312/",
-    },
+   
   ]
 
   // 5. Technical Operations
@@ -134,14 +129,8 @@ const AllTeam = () => {
   // 6. Social Media
   const socialMediaTeam = [
     {
-      name: "Anushka Agam",
-      position: "Head and content strategist for online presence, branding and social media ",
-      image: "/images/team/ANUSHKA.jpg",
-      linkedin: "https://www.linkedin.com/in/anushka-agam-1b552632b/",
-    },
-    {
       name: "Aryan Digambare",
-      position: "Joint Head for online presence, branding and social media ",
+      position: "Head for online presence, branding and social media ",
       image: "/images/team/Aryan.jpg",
       linkedin: "https://www.linkedin.com/in/aryan-digambare-76105732b/",
     },
