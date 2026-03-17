@@ -77,7 +77,7 @@ const AllTeam = () => {
       name: "Krish Sarode",
       position: "Head of Finance",
       image: "/images/team/Krish.jpg",
-      linkedin: "https://www.linkedin.com/in/krish-sarode-68b53332b/",
+      linkedin: "https://www.linkedin.com/in/krish-rajendra-sarode-68b53332b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     },
     {
       name: "Disha Marne",
