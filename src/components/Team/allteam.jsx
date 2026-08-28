@@ -35,6 +35,7 @@ const AllTeam = () => {
 
   // 1. Advisors
   const advisors = [
+
     {
       name: "Himanshee Jaiswal",
       position: "Student Advisor",
