@@ -36,12 +36,6 @@ const AllTeam = () => {
   // 1. Advisors
   const advisors = [
     {
-      name: "Dr. Vaishali Kulloli",
-      position: "Faculty Advisor",
-      image: "/images/team/vaishali.png",
-      linkedin: "https://www.linkedin.com/in/dr-vaishali-kulloli-3b4685326/",
-    },
-    {
       name: "Himanshee Jaiswal",
       position: "Student Advisor",
       image: "/images/team/Himanshee.jpg",
@@ -65,7 +59,7 @@ const AllTeam = () => {
     },
     {
       name: "Ritika Kolte",
-      position: "Deputy Chair",
+      position: "Deputy Chairperson",
       image: "/images/team/Ritika.jpg",
       linkedin: "https://www.linkedin.com/in/ritikakolte",
     },
@@ -131,25 +125,25 @@ const AllTeam = () => {
     },
     {
       name: "Sanskruti Kale",
-      position: "Team Member(Tech)",
+      position: "Technical Member",
       image: "/images/team/Sanskruti.png",
       linkedin: "https://www.linkedin.com/in/sanskruti-kale-8270523aa?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     },
     {
       name: "Charudatta Nikumbe",
-      position: "Team Member(Tech)",
+      position: "Technical Member",
       image: "/images/team/Charudatta.png",
       linkedin: "https://www.linkedin.com/in/charudattanikumbe-devsecops?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     },
     {
       name: "Rudransh Gupta",
-      position: "Team Member(Tech)",
+      position: "Technical Member",
       image: "/images/team/RUDRANSH.png",
       linkedin: "https://www.linkedin.com/in/rudransh-gupta-629742425?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     },
     {
       name: "Vedant Parsewar",
-      position: "Team Member(Tech)",
+      position: "Technical Member",
       image: "/images/team/Vedant.jpg",
       linkedin: "https://www.linkedin.com/in/vedant-parsewar-819993376?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     },
@@ -171,19 +165,19 @@ const AllTeam = () => {
     },
     {
       name: "Sakshi Patil",
-      position: "Team Member(Event)",
+      position: "Event Member",
       image: "/images/team/Sakshi.jpeg",
       linkedin: "https://www.linkedin.com/in/sakshi-patil-571904375?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     },
     {
       name: "Sahil Rathod",
-      position: "Team Member(Event)",
+      position: "Event Member",
       image: "/images/team/Sahil.jpg",
       linkedin: "https://www.linkedin.com/in/sahil-rathod-8a741a376?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     },
     {
       name: "Sharvari Karekar",
-      position: "Team Member(Event)",
+      position: "Event Member",
       image: "/images/team/Sharvari.png",
       linkedin: "https://www.linkedin.com/in/sharvari-karekar-564690394",
     },
@@ -205,13 +199,13 @@ const AllTeam = () => {
     },
     {
       name: "Purva Khairnar",
-      position: "Team Member(Social)",
+      position: "Social Media Member",
       image: "/images/team/Purva.jpeg",
       linkedin: "https://www.linkedin.com/in/purva-khairnar-b35902388?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     },
     {
       name: "Sarthak Bhosale",
-      position: "Team Member(Social)",
+      position: "Social Media Member",
       image: "/images/team/Sarthak.jpeg",
       linkedin: "",
     },
@@ -233,19 +227,19 @@ const AllTeam = () => {
     },
     {
       name: "Manasi Pawane",
-      position: "Team Member(Executive)",
+      position: "Executive Member",
       image: "/images/team/Manasi.jpg",
       linkedin: "https://www.linkedin.com/in/manasi-vikas-pawane-36a89a384?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     },
     {
       name: "Yash Rajbhoj",
-      position: "Team Member(Executive)",
+      position: "Executive Member",
       image: "/images/team/Yash.jpg",
       linkedin: "https://www.linkedin.com/in/yash-rajbhoj-06b6b3370?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     },
     {
       name: "Bhoomika Rao",
-      position: "Team Member(Executive)",
+      position: "Executive Member",
       image: "/images/team/Bhoomika.jpg",
       linkedin: "https://www.linkedin.com/in/bhoomika-rao-170025429",
     },
@@ -267,13 +261,13 @@ const AllTeam = () => {
     },
     {
       name: "Vaishnavi Deore",
-      position: "Team Member(Design)",
+      position: "Design Member",
       image: "/images/team/Vaishnavi.jpg",
       linkedin: "https://www.linkedin.com/in/vaishnavi-deore-439886396?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     },
     {
       name: "Pragati Joshi",
-      position: "Team Member(Design)",
+      position: "Design Member",
       image: "/images/team/PRAGATI.png",
       linkedin: "https://www.linkedin.com/in/pragati-joshi-16228b392?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     },
