@@ -21,7 +21,8 @@
 /* DEFAULT: 3:4 Aspect Ratio for the general team (All Team Page) */
 .team-card-image {
   width: 100%;
-  aspect-ratio: 3/4; /* Keeps everyone else uniform */
+  aspect-ratio: 3/4;
+  /* Keeps everyone else uniform */
   overflow: hidden;
   background-color: #f6f9fc;
   display: flex;
@@ -32,8 +33,9 @@
 .team-card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Crops uniformly for the general team */
-  object-position: center top; 
+  object-fit: cover;
+  /* Crops uniformly for the general team */
+  object-position: center top;
   transition: transform 0.3s ease;
 }
 
@@ -56,7 +58,8 @@
 .team-grid-hod .team-card {
   width: 100%;
   max-width: 240px;
-  height: auto; /* Let card grow */
+  height: auto;
+  /* Let card grow */
 }
 
 /* ADVISORS Container */
@@ -72,7 +75,8 @@
 .team-grid-advisors .team-card {
   width: 220px;
   flex-shrink: 0;
-  height: auto; /* Let card grow */
+  height: auto;
+  /* Let card grow */
 }
 
 /* CRITICAL FIX: 
@@ -81,7 +85,8 @@
 */
 .team-grid-hod .team-card-image,
 .team-grid-advisors .team-card-image {
-  aspect-ratio: auto !important; /* Override the default 3:4 */
+  aspect-ratio: auto !important;
+  /* Override the default 3:4 */
   height: auto !important;
   min-height: 0;
 }
@@ -89,7 +94,8 @@
 .team-grid-hod .team-card-image img,
 .team-grid-advisors .team-card-image img {
   height: auto !important;
-  object-fit: contain !important; /* Shows full image */
+  object-fit: contain !important;
+  /* Shows full image */
   object-position: center !important;
 }
 
@@ -261,7 +267,7 @@
 
 .hierarchy-row {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 24px;
   width: 100%;
@@ -294,29 +300,31 @@
   }
 
   .hierarchy-row .team-card {
-    width: 100%;        
-    max-width: 280px;   
+    width: 100%;
+    max-width: 280px;
   }
 
   /* ADVISORS - Side by Side on Mobile
      Updated to support full height images
   */
   .team-grid-advisors {
-    flex-direction: row;          
+    flex-direction: row;
     flex-wrap: nowrap !important;
     gap: 10px !important;
     width: 100%;
     padding: 0 5px;
     box-sizing: border-box;
-    align-items: flex-start; /* Aligns top so height diff doesn't break layout */
+    align-items: flex-start;
+    /* Aligns top so height diff doesn't break layout */
   }
 
   .team-grid-advisors .team-card {
     width: 50% !important;
-    max-width: none;              
+    max-width: none;
     min-width: 0 !important;
     flex-shrink: 1 !important;
-    height: auto !important; /* Ensure card expands */
+    height: auto !important;
+    /* Ensure card expands */
   }
 
   /* Override any previous fixed heights for advisors on mobile */
@@ -325,10 +333,10 @@
     max-height: none !important;
     aspect-ratio: auto !important;
   }
-  
+
   .team-grid-advisors .team-card-image img {
-     height: auto !important;
-     width: 100%;
+    height: auto !important;
+    width: 100%;
   }
 
   .team-grid-advisors .team-card-content {
@@ -338,11 +346,11 @@
   .team-grid-advisors .team-card-name {
     font-size: 0.85rem !important;
     margin-bottom: 2px;
-    white-space: nowrap;          
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  
+
   .team-grid-advisors .team-card-position {
     font-size: 0.65rem !important;
     line-height: 1.1;

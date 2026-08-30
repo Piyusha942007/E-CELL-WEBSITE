@@ -283,17 +283,14 @@ const AllTeam = () => {
 
       <section className="team-section">
         <div className="hierarchy-section">
-          {/* 1. Advisors */}
+          {/* 1. Advisors + High Command */}
           <div className="hierarchy-row">
-            {advisors.map((member, index) => (
-              <TeamCard key={index} member={member} linkedin={member.linkedin} />
-            ))}
-          </div>
-
-          {/* 2. High Command */}
-          <div className="hierarchy-row">
-            {highCommand.map((member, index) => (
-              <TeamCard key={index} member={member} linkedin={member.linkedin} />
+            {[...advisors, ...highCommand].map((member, index) => (
+              <TeamCard
+                key={index}
+                member={member}
+                linkedin={member.linkedin}
+              />
             ))}
           </div>
 

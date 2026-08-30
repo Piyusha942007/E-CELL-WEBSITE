@@ -45,12 +45,7 @@ const Team = () => {
       image: "/images/team/vaishali.png",
       linkedin: "https://www.linkedin.com/in/dr-vaishali-kulloli-3b4685326/",
     },
-    {
-      name: "Bhagyesh Makhmale",
-      position: "Student Advisor",
-      image: "/images/team/Bhagyesh.png",
-      linkedin: "https://www.linkedin.com/in/bhagyesh-makhamale/",
-    },
+
   ]
 
   return (
