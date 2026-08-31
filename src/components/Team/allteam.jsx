@@ -278,7 +278,7 @@ const AllTeam = () => {
     <div className="team-container">
       <div className="team-header">
         <p className="team-header-subtitle">Meet the Team</p>
-        <h1 className="team-header-title">E-CELL Team 2025</h1>
+        <h1 className="team-header-title">E-CELL Team 2026</h1>
       </div>
 
       <section className="team-section">
