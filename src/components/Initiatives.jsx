@@ -78,41 +78,39 @@ const Initiatives = () => {
             </div>
         </FadeIn>
 
-        <div className="grid md:grid-cols-2 gap-8">
-            <FadeIn delay={0.1}> 
-              <div className="group flex flex-col h-full p-8 rounded-2xl border border-gray-100 bg-surface shadow-sm hover:shadow-xl transition-all duration-300">
-                <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-6 text-blue-600">
-                  <Lightbulb className="w-6 h-6" />
-                </div>
-                <h4 className="text-2xl font-bold text-primary mb-3">Ideathon 2025</h4>
-                <p className="text-secondary text-sm leading-relaxed mb-6 flex-grow">
-                    48-hour innovation challenge where teams pitch and prototype their startup ideas to win seed funding.
-                </p>
-                <div className="mt-auto pt-6 border-t border-gray-200">
-                    <Link to="/coming-soon" className="text-accent font-bold text-sm flex items-center hover:underline">
-                        Know More <ArrowRight className="w-4 h-4 ml-1" />
-                    </Link>
-                </div>
+        <FadeIn delay={0.1}>
+          <div className="max-w-4xl mx-auto bg-surface rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 grid md:grid-cols-2">
+            {/* Left: Banner Image */}
+            <div className="h-64 md:h-auto bg-gray-900 relative overflow-hidden flex items-center justify-center p-2">
+              <img 
+                src={`${publicUrl}udbhav/udbhav26-banner.png`} 
+                alt="Udbhav 2026 Banner" 
+                className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                SEPT 29, 2026
               </div>
-            </FadeIn>
+            </div>
 
-            <FadeIn delay={0.2}> 
-              <div className="group flex flex-col h-full p-8 rounded-2xl border border-gray-100 bg-surface shadow-sm hover:shadow-xl transition-all duration-300">
-                <div className="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center mb-6 text-indigo-600">
-                  <Users className="w-6 h-6" />
-                </div>
-                <h4 className="text-2xl font-bold text-primary mb-3">LinkedIn for Startups</h4>
-                <p className="text-secondary text-sm leading-relaxed mb-6 flex-grow">
-                    Exclusive workshop on leveraging personal branding and professional networks for fundraising and hiring.
-                </p>
-                <div className="mt-auto pt-6 border-t border-gray-200">
-                    <Link to="/coming-soon" className="text-accent font-bold text-sm flex items-center hover:underline">
-                        Know More <ArrowRight className="w-4 h-4 ml-1" />
-                    </Link>
-                </div>
+            {/* Right: Content */}
+            <div className="p-8 flex flex-col justify-center">
+              <div className="inline-block self-start bg-blue-50 text-accent text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">
+                Flagship Hackathon
               </div>
-            </FadeIn>
-        </div>
+              <h4 className="text-3xl font-heading font-bold text-primary mb-3">
+                UDBHAV '26
+              </h4>
+              <p className="text-secondary text-sm leading-relaxed mb-6">
+                The premier innovation challenge where student teams turn startup ideas into working prototypes and pitch across 2 competitive rounds for a <span className="font-bold text-primary">₹16,000 prize pool</span>.
+              </p>
+              <div className="mt-auto pt-4 border-t border-gray-200/60">
+                <Link to="/udbhav-2026" className="text-accent font-bold text-sm flex items-center hover:underline group">
+                  Know More <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
         
       </div>
     </section>

@@ -40,12 +40,17 @@ const Team = () => {
 
   const advisorMembers = [
     {
-      name: "Dr.Vaishali Kulloli",
+      name: "Dr. Vaishali Kulloli",
       position: "Faculty Advisor",
       image: "/images/team/vaishali.png",
       linkedin: "https://www.linkedin.com/in/dr-vaishali-kulloli-3b4685326/",
     },
-
+    {
+      name: "Mrs. Lavanya Pise",
+      position: "Faculty Co-Advisor",
+      image: "/images/team/lavanya.jpg",
+      linkedin: "",
+    },
   ]
 
   return (

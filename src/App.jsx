@@ -12,6 +12,7 @@ import './components/Team/team.css';
 
 import Footer from './components/Footer';
 import UdbhavPage from './pages/UdbhavPage';
+import Udbhav2026Page from './pages/Udbhav2026Page';
 import ComingSoonPage from './pages/ComingSoonPage';
 import SocialSidebar from './components/SocialSidebar';
 import Contact from './components/Contact';
@@ -52,6 +53,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/udbhav" element={<UdbhavPage />} />
+        <Route path="/udbhav-2026" element={<Udbhav2026Page />} />
+        <Route path="/udbhav2026" element={<Udbhav2026Page />} />
         <Route path="/coming-soon" element={<ComingSoonPage />} />
         <Route path="/team" element={<Team />} />
         <Route path="/allteam" element={<AllTeam />} />
